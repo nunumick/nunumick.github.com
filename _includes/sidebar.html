@@ -1,0 +1,30 @@
+<aside class="grid_4" id="sidebar">
+	<div class="widget">
+		<h3>分类</h3>
+		<ul>
+            {% for category in site.categories %}
+            <li><a href="{{ site.blogroot }}/{{ category | first}}/">{{ category | first }}</a>({{ category | last | size }})</li>
+            {% endfor %}
+		</ul>
+	</div>
+    {% if site.related_posts %}
+	<div class="widget">
+		<h3>相关文章</h3>
+		<ul>
+            {% for post in site.related_posts limit:5 %}
+            <li><a href="{{ site.blogroot }}{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+		</ul>
+    </div>
+    {% endif %}
+
+	<div class="widget">
+		<h3>近期文章</h3>
+		<ul>
+            {% for post in site.posts limit:5 %}
+            <li><a href="{{ site.blogroot }}{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+		</ul>
+	</div>
+</aside><!-- end #sidebar -->
+

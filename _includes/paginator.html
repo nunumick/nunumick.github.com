@@ -1,0 +1,31 @@
+{% if paginator.total_pages > 1 %}
+	<ol class="page-navigator">
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <li><a href="{{ site.blogroot }}/#content" class="page-previous">上一页</a></li>
+        {% else %}
+        <li><a href="{{ site.blogroot }}/page{{paginator.previous_page}}/#content" class="page-previous">上一页</a></li>
+        {% endif %}
+    {% else %}
+        <li><span class="page-previous">上一页</span></li>
+    {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+        {% if page <= 10 %}
+            {% if page == paginator.page %}
+            <li class="current"><a href="#content">{{ page }}</a></li>
+            {% else %}
+                {% if page == 1 %}
+                <li><a href="{{ site.blogroot }}/#content">{{page}}</a></li>
+                {% else %}
+                <li><a href="{{ site.blogroot }}/page{{page}}/#content">{{page}}</a></li>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+        <li><a href="{{ site.blogroot }}/page{{paginator.next_page}}/#content" class="page-next">下一页</a></li>
+    {% else %}
+        <li><span class="page-next">下一页</span></li>
+    {% endif %}
+	</ol>
+{% endif %}

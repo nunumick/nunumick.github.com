@@ -1,0 +1,29 @@
+{% if post %}
+	<artical class="post">
+    <h2 class="entry_title"><a href="{{ site.blogroot }}{{ post.url }}">{{ post.title }}</a></h2>
+		<p class="entry_data">
+		<span>作者：nunumick</span>
+        <span>发布时间：{{ post.date | date_to_string}}</span>
+        {% if post.category %}
+        <span class="entry_cate">分类：<a href="{{ site.blogroot }}/{{post.category}}/">{{post.category}}</a></span>
+        {% endif %}
+		</p>
+        <div class="entry_cont">
+            {{ post.content }}
+        </div>
+	</artical>
+{% else %}
+	<artical class="post">
+    <h2 class="entry_title"><a href="{{ site.blogroot }}{{ page.url }}">{{ page.title }}</a></h2>
+		<p class="entry_data">
+		<span>作者：nunumick</span>
+        <span>发布时间：{{ page.date | date_to_string}}</span>
+        {% if page.category %}
+        <span class="entry_cate">分类：<a href="{{ site.blogroot }}/{{page.category}}/">{{page.category}}</a></span>
+        {% endif %}
+		</p>
+        <div class="entry_cont">
+            {{ content }}
+        </div>
+	</artical>
+{% endif %}

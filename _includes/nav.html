@@ -1,0 +1,7 @@
+<nav id="nav_box" class="clearfix">
+	<ul class="container_16 clearfix" id="nav_menu">
+        <li {% if page.title == '首页' %} class="current" {% endif %}><a href="{{ site.blogroot }}/">首页</a></li>
+		<li {% if page.title == '文章列表' %} class="current" {% endif %}><a href="{{ site.blogroot }}/posts.html " title="文章列表">文章列表</a></li>
+		<li {% if page.title == '关于' %} class="current" {% endif %}><a href="{{ site.blogroot }}/about.html " title="关于">关于</a></li>
+    </ul>
+</nav>

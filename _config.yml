@@ -1,2 +1,6 @@
 markdown: rdiscount
 pygments: true
+paginate: 1
+blogroot: 'http://nunumick.local'
+blogname: '默尘'
+blogdesc: '--  小隐于山，中隐于市，大隐于心 --'

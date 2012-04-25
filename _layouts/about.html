@@ -15,11 +15,7 @@
 	<section class="container_16 clearfix">
 
         <section class="grid_10" id="content">
-            {% for post in paginator.posts %}
-                {% include post.html %}
-            {% endfor %}
-            
-            {% include paginator.html %}
+            {% include about.html %}
         </section>
 		{% include sidebar.html %}
 		{% include footer.html %}
