@@ -2,6 +2,6 @@ markdown: rdiscount
 pygments: true
 paginate: 1
 #custom config
-blogroot: 'http://nunumick.me'
+#blogroot: 'http://nunumick.me'
 blogname: '默尘'
 blogdesc: '--  小隐于山，中隐于市，大隐于心 --'
