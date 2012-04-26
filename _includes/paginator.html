@@ -1,3 +1,4 @@
+{% if paginator %}
 {% if paginator.total_pages > 1 %}
 	<ol class="page-navigator">
     {% if paginator.previous_page %}
@@ -28,4 +29,5 @@
         <li><span class="page-next">下一页</span></li>
     {% endif %}
 	</ol>
+{% endif %}
 {% endif %}

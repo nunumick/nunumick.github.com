@@ -166,6 +166,14 @@ p.description {
 			ul#nav_menu li a:hover {
 				text-decoration: underline;
 			}
+            ul#nav_menu li.subscribe {
+                float:right;
+                width:215px;
+            }
+            ul#nav_menu li.subscribe a{
+                border:none;
+                padding:0;
+            }
 
 			/* ------------------
 			 *  * content
@@ -417,7 +425,6 @@ ol.comment-list li {
 #footer {
 	margin-top: 15px;
 	padding: 15px 0;
-	text-align: center;
 }
 
 #footer a {

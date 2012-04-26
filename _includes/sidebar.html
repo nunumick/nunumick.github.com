@@ -3,7 +3,7 @@
 		<h3>分类</h3>
 		<ul>
             {% for category in site.categories %}
-            <li><a href="{{ site.blogroot }}/{{ category | first}}/">{{ category | first }}</a>({{ category | last | size }})</li>
+            <li><a href="{{ site.blogroot }}/categories/{{ category | first}}/">{{ category | first }}</a>({{ category | last | size }})</li>
             {% endfor %}
 		</ul>
 	</div>
