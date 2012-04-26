@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	{% include title.html %}
+	{% include meta.html %}
+	{% include assets.html %}
+</head>
+
+<body>
+
+	{% include header.html %}
+	{% include nav.html %}
+
+	<section class="container_16 clearfix">
+
+        <section class="grid_10" id="content">
+            {{ content }}
+        </section>
+		{% include sidebar.html %}
+		{% include footer.html %}
+
+	</section>
+
+	{% include ga.html %}
+
+</body>
+</html>

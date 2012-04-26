@@ -1,7 +1,7 @@
 	<artical class="post">
         <div class="entry_cont">
             <ol>
-            {% for post in site.posts %}
+            {% for post in site.categories.[page.category] %}
             <li><a href="{{ site.blogroot }}{{post.url}}">{{post.title}}</a> ({{ post.date | date_to_string }})</li>
             {% endfor %}
             </ol>

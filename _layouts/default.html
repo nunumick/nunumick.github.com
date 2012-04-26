@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	{% include title.html %}
-	{% include meta.html %}
-	{% include assets.html %}
-</head>
+---
+layout: base
+---
+{% for post in paginator.posts %}
+    {% include post.html %}
+{% endfor %}
 
-<body>
-
-	{% include header.html %}
-	{% include nav.html %}
-
-	<section class="container_16 clearfix">
-
-        <section class="grid_10" id="content">
-            {% for post in paginator.posts %}
-                {% include post.html %}
-            {% endfor %}
-            
-            {% include paginator.html %}
-        </section>
-		{% include sidebar.html %}
-		{% include footer.html %}
-
-	</section>
-
-	{% include ga.html %}
-
-</body>
-</html>
+{% include paginator.html %}
