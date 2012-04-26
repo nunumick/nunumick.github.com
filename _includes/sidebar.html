@@ -11,7 +11,7 @@
 	<div class="widget">
 		<h3>相关文章</h3>
 		<ul>
-            {% for post in site.related_posts limit:5 %}
+            {% for post in site.categories.[page.category] limit:5 %}
             <li><a href="{{ site.blogroot }}{{ post.url }}">{{ post.title }}</a></li>
             {% endfor %}
 		</ul>
