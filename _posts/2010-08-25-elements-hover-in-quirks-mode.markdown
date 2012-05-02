@@ -8,7 +8,7 @@ tags:
     - browser
 ---
 
-开发过程中将demo中的内容拆分进各子模块，发现之前好好的 hover 效果失效了，我排查的结果是因为在模块中没有定义doctype，页面默认使用 quirks mode，会导致非链接<a>标签的 hover 伪类在 IE7/8 和 firefox 均失去效果。
+开发过程中将demo中的内容拆分进各子模块，发现之前好好的 hover 效果失效了，我排查的结果是因为在模块中没有定义doctype，页面默认使用 quirks mode，会导致非链接&lt;a&gt;标签的 hover 伪类在 IE7/8 和 firefox 均失去效果。
 
 我们通常认为的非 IE6 以下浏览器都支持链接以外元素的 hover 伪类，其实还需要依赖 doctype，比如这样的代码就在 IE7/8 和 firefox 失去效果：
 {% highlight html %}
