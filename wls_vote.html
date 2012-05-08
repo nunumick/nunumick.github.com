@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+    <h3>本程序可每秒钟自动投票给王老师。</h3>
+    <p> 如需停止投票，关闭本页面即可。 </p>
+    <p> 王老师现在的投票数是： </p>
+    <iframe id="J_Frame" src="about:blank" style="border:0;height:100px;width:300px;" frameborder="0" scroll="no"></iframe>
+    <script>
+        var iframe = document.getElementById('J_Frame'),
+        voteStr =  'http://app.gdwomen.org.cn/vote/post.php?vote=vote2&action=vote';
+        setInterval(function(){
+            iframe.src = voteStr + '&t=' + +new Date();
+        },1000);
+    </script>
+</body>
+</html>
