@@ -32,23 +32,43 @@ module.exports = function(grunt){
       pkg: grunt.file.readJSON('package.json'),
       clean: ['categories'],
       copy:{
-        jekyll: {
-          src:'_site/categories',
+        categories: {
+          expand: true,
+          cwd: '_site/',
+          src:'categories/**',
           dest:'./'
         }
-      }
+      },
       shell: {
         jekyll:{
           command: 'jekyll build',
           options: {
             async: false
           }
+        },
+        gitadd:{
+          command: 'git add -A',
+          options:{
+            async:false
+          }
+        },
+        gitci:{
+          command: 'git ci -m "update pages"',
+          options:{
+            async:false
+          }
+        },
+        gitpush:{
+          command: 'git push origin master',
+          options:{
+            async:false
+          }
         }
       },
       watch: {
         jekyll: {
           files: ['_posts/*.md','_posts/**/*.md','_layout/*.html', '_includes/*.html'],
-          tasks: ['clean','shell:jekyll','copy:jekyll']
+          tasks: ['default']
         }
       }
   });
@@ -58,8 +78,9 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['clean','shell:jekyll','copy:jekyll']);
-  grunt.registerTask('git', ['default','shell:git-ci','shell:git-push']);
+  grunt.registerTask('copycat', ['copy:categories']);
+  grunt.registerTask('default', ['clean','shell:jekyll','copy:categories']);
+  grunt.registerTask('git', ['default','shell:gitadd','shell:gitci','shell:gitpush']);
 }
 {% endhighlight %}
 
@@ -70,4 +91,16 @@ module.exports = function(grunt){
 {% endhighlight %}
 
 之后只管自己写文章、更新、保存，每有动作，grunt 就会自动调用 jekyll 构建文章和分类，并且还能自动完成原本需要我手动操作的繁琐工作，是不是更方便了。
+
+
+### grunt-shell-spawn
+
+值得一提的是shell-spawn这个模块，可以执行命令，使用同步的方式可以完成一些列的命令行任务，超赞！
+
+{% highlight javascript %}
+  options:{
+    async:false //使用同步方式
+  }
+{% endhighlight %}
+
 
