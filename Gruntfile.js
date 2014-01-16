@@ -1,12 +1,33 @@
 module.exports = function(grunt){
   grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
-      clean: ['categories'],
+      clean: ['_config.yml','categories','tag','tags'],
       copy:{
         categories: {
           expand: true,
           cwd: '_site/',
           src:'categories/**',
+          dest:'./'
+        },
+        tags: {
+          files:[
+            {expand: true,cwd: '_site/',src:'tags/**',dest:'./'},
+            {expand: true,cwd: '_site/',src:'tag/**',dest:'./'}
+          ]
+        },
+        localConfig:{
+          expand: true,
+          cwd: 'config',
+          src: '_config_local.yml',
+          dest:'./',
+          rename : function(dest,src){
+            return dest + '_config.yml';
+          }
+        },
+        gitConfig:{
+          expand: true,
+          cwd: 'config',
+          src: '_config.yml',
           dest:'./'
         }
       },
@@ -17,19 +38,19 @@ module.exports = function(grunt){
             async: false
           }
         },
-        gitadd:{
+        gitAdd:{
           command: 'git add -A',
           options:{
             async:false
           }
         },
-        gitci:{
+        gitCi:{
           command: 'git ci -m "update pages"',
           options:{
             async:false
           }
         },
-        gitpush:{
+        gitPush:{
           command: 'git push origin master',
           options:{
             async:false
@@ -38,7 +59,7 @@ module.exports = function(grunt){
       },
       watch: {
         jekyll: {
-          files: ['_posts/*.md','_posts/**/*.md','_layout/*.html', '_includes/*.html'],
+          files: ['_posts/*.md','_posts/**/*.md','_layout/*.html', '_includes/*.html', 'config/*.yml'],
           tasks: ['default']
         }
       }
@@ -49,7 +70,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('copycat', ['copy:categories']);
-  grunt.registerTask('default', ['clean','shell:jekyll','copy:categories']);
-  grunt.registerTask('git', ['default','shell:gitadd','shell:gitci','shell:gitpush']);
+  grunt.registerTask('default', ['clean','copy:localConfig','shell:jekyll','copy:categories','copy:tags']);
+  grunt.registerTask('git', ['clean','copy:gitConfig','shell:jekyll','copy:categories','copy:tags','shell:gitAdd','shell:gitCi','shell:gitPush']);
 }

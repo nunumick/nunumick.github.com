@@ -4,6 +4,4 @@ _posts/test/
 _site/
 .DS_Store
 *.swp
-nunumick.me.js
-node_modules/
 *.log

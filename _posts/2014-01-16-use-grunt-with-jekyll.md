@@ -11,7 +11,7 @@ tags:
 
 不过 github 为了安全考虑，没有支持 jekyll 的插件 _plugin，但有些插件我们是很需要的，比如分类、标签插件，你很难想象没有这类索引插件的博客是什么样子，我觉得 github 应该开放这类插件，遗憾的是至少目前没有开放。
 
-我的做法是先在本地使用插件构建好静态文件提交到 github，我猜很多人也是这样的。比如分类插件，jekyll 会调用插件在 _site 目录下构建出一个 categories 目录，里面是所有分类的索引文件，然后我再手动把 categories 目录拷贝到根目录，之后 git 提交，所有工作都是手动完成，有够蛋疼。
+我的做法是先在本地使用插件构建好静态文件提交到 github，我猜很多人也是这样的。比如分类插件，jekyll 会调用插件在 _site 目录下构建出一个 categories 目录，里面是所有分类的索引文件，然后我再手动把 categories 目录拷贝到根目录，之后 git 提交经由 github 的内置 jekyll 生成到站点的 _site 目录，所有工作都是手动完成，有够蛋疼。
 
 ### 使用grunt自动构建
 
@@ -78,7 +78,6 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('copycat', ['copy:categories']);
   grunt.registerTask('default', ['clean','shell:jekyll','copy:categories']);
   grunt.registerTask('git', ['default','shell:gitadd','shell:gitci','shell:gitpush']);
 }
@@ -108,17 +107,17 @@ module.exports = function(grunt){
 
 顺便做了自动构建并提交到 github 的任务。
 
-这是执行结果：
+执行结果：
 
-{% highlight html %}
+{% highlight bash %}
 nunumicktekiMacBook-Pro:blog nunumick$ grunt git
 Running "clean:0" (clean) task
 Cleaning categories...OK
 
 Running "shell:jekyll" (shell) task
-Configuration file: /Users/nunumick/AliDrive/我的工作/blog/_config.yml
-            Source: /Users/nunumick/AliDrive/我的工作/blog
-       Destination: /Users/nunumick/AliDrive/我的工作/blog/_site
+Configuration file: /Users/nunumick/blog/_config.yml
+            Source: /Users/nunumick/blog
+       Destination: /Users/nunumick/blog/_site
       Generating... done.
 
 Running "copy:categories" (copy) task

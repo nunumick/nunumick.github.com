@@ -45,13 +45,11 @@ input, textarea {
 			pre, code, tt {
 					/*font: 12px 'andale mono', 'lucida console', monospace; line-height: 1.5;*/
 				}
-				code { margin-bottom: 20px; }
 				pre, code {
 					display: block;
 					overflow-x: auto;
-					/*background: #f4f4f4;*/
-					padding: 5px 10px;
-					/*border: 1px solid #eee;*/
+					background: #f4f4f4;
+					padding: 8px 10px;
 				}
 
 				/* Remove possible quote marks (") from <q>, <blockquote>. */
@@ -420,7 +418,7 @@ ol.comment-list li {
 }
 
 /* ------------------
- *  * footer 
+ *  * footer
  *   * --------------- */
 #footer {
 	margin-top: 15px;
@@ -453,8 +451,8 @@ div.aligncenter {
 img.alignleft { margin: 4px 15px 0 0; }
 img.alignright { margin: 4px 0 0 15px; }
 
-.alt { 
-	color: #666; 
-	font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif; 
+.alt {
+	color: #666;
+	font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif;
 	font-weight: normal;
 }

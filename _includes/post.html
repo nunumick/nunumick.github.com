@@ -21,7 +21,7 @@
         <span class="entry_cate">标签：
             {% for tag in post.tags %}
             {% if forloop.index > 1 %},{% endif %}
-            <a href="{{ site.blogroot }}/tags/{{tag}}/">{{tag}}</a>
+            <a href="{{ site.blogroot }}/tag/{{tag}}/">{{tag}}</a>
             {% endfor %}
         </span>
         <br />
@@ -51,7 +51,7 @@
         <span class="entry_cate">标签：
             {% for tag in page.tags %}
             {% if forloop.index > 1 %},{% endif %}
-            <a href="{{ site.blogroot }}/tags/{{tag}}/">{{tag}}</a>
+            <a href="{{ site.blogroot }}/tag/{{tag}}/">{{tag}}</a>
             {% endfor %}
         </span>
         <br />

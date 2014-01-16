@@ -1,0 +1,15 @@
+# --------------- #
+#   main config   #
+# --------------- #
+markdown: rdiscount
+pygments: true
+paginate: 5
+permalink: /blog/:year/:month/:day/:title.html
+
+# --------------- #
+#  custom config  #
+# --------------- #
+blogroot: 'http://nunumick.github.io'
+blogname: '默尘'
+blogdesc: '--  小隐于山，中隐于市，大隐于心 --'
+blogauthor: 'nunumick'
