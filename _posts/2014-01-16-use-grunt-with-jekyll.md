@@ -104,3 +104,38 @@ module.exports = function(grunt){
 {% endhighlight %}
 
 
+### 自动提交git
+
+顺便做了自动构建并提交到 github 的任务。
+
+这是执行结果：
+
+{% highlight html %}
+nunumicktekiMacBook-Pro:blog nunumick$ grunt git
+Running "clean:0" (clean) task
+Cleaning categories...OK
+
+Running "shell:jekyll" (shell) task
+Configuration file: /Users/nunumick/AliDrive/我的工作/blog/_config.yml
+            Source: /Users/nunumick/AliDrive/我的工作/blog
+       Destination: /Users/nunumick/AliDrive/我的工作/blog/_site
+      Generating... done.
+
+Running "copy:categories" (copy) task
+Created 10 directories, copied 18 files
+
+Running "shell:gitadd" (shell) task
+
+Running "shell:gitci" (shell) task
+[master 0a6351b] update pages
+ 1 file changed, 39 insertions(+), 6 deletions(-)
+
+Running "shell:gitpush" (shell) task
+>> To git@github.com:nunumick/nunumick.github.com.git
+>> 6e0b655..0a6351b  master -> master
+
+Done, without errors.
+{% endhighlight %}
+
+
+
