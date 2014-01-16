@@ -1,0 +1,28 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "my blog",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nunumick/nunumick.github.com.git"
+  },
+  "keywords": [
+    "github"
+  ],
+  "author": "nunumick",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/nunumick/nunumick.github.com/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-shell-spawn": "~0.3.0"
+  }
+}
