@@ -59,7 +59,7 @@ module.exports = function(grunt){
       },
       watch: {
         jekyll: {
-          files: ['_posts/*.md','_posts/**/*.md','_layout/*.html', '_includes/*.html', 'config/*.yml'],
+          files: ['_posts/*.md','_posts/**/*.md','css/*.css','_layout/*.html', '_includes/*.html', 'config/*.yml'],
           tasks: ['default']
         }
       }

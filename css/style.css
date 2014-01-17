@@ -456,3 +456,21 @@ img.alignright { margin: 4px 0 0 15px; }
 	font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif;
 	font-weight: normal;
 }
+
+.site-tags li{
+  *zoom:1;
+  display:inline-block;
+  border:1px solid #ccc;
+  margin: 3px 4px 3px 0;
+}
+.site-tags li a{
+  color:#949494;
+  padding:0 5px;
+  display:block;
+  height:24px;
+  line-height:24px;
+}
+.site-tags li a:hover{
+  color:#999;
+  background:#f1f1f1;
+}

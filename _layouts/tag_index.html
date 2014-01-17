@@ -1,7 +1,8 @@
 ---
 layout: base
+title: 标签
 ---
 
-<ul>{% for tag in site.tags %}
-  <li><a href="/tag/{{ tag[0] }}">{{ tag[0] }}</a> <span>{{ tag[1].size }}</span></li>{% endfor %}
+<ul class="site-tags">{% for tag in site.tags %}
+  <li><a href="/tag/{{ tag[0] }}">{{ tag[0] }}<span>({{ tag[1].size }})</span></a></li>{% endfor %}
 </ul>
