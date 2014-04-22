@@ -51,7 +51,7 @@ module.exports = function(grunt){
           }
         },
         gitCi:{
-          command: 'git ci -m "update pages"',
+          command: 'git ci -m "update posts by grunt"',
           options:{
             async:false
           }

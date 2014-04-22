@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用grunt管理jekyll博客
+title: 使用 grunt 管理 jekyll 博客
 category: frontend
 tags:
     - grunt
