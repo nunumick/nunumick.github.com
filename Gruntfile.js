@@ -38,6 +38,12 @@ module.exports = function(grunt){
             async: false
           }
         },
+        jekyllDraft:{
+          command: 'jekyll build --drafts',
+          options: {
+            async: false
+          }
+        },
         gitAdd:{
           command: 'git add -A',
           options:{
@@ -78,6 +84,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-tps');
 
   grunt.registerTask('default', ['clean','copy:localConfig','shell:jekyll','copy:categories','copy:tags']);
+  grunt.registerTask('draft', ['clean','copy:localConfig','shell:jekyllDraft','copy:categories','copy:tags']);
   grunt.registerTask('git', ['clean','copy:gitConfig','shell:jekyll','copy:categories','copy:tags','shell:gitAdd','shell:gitCi','shell:gitPush']);
   grunt.registerTask('tps',['tps']);
 }

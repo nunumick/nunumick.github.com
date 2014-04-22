@@ -5,6 +5,7 @@ markdown: rdiscount
 pygments: true
 paginate: 5
 permalink: /blog/:year/:month/:day/:title.html
+exclude: [node_modules,Gruntfile.js,README.md,package.json]
 
 # --------------- #
 #  custom config  #
