@@ -1,7 +1,9 @@
 _drafts/
 _posts/work/
+_posts/draft/
 _posts/test/
 _site/
+node_modules/
 .DS_Store
 *.swp
 *.log

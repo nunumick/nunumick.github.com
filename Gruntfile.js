@@ -57,6 +57,12 @@ module.exports = function(grunt){
           }
         }
       },
+      tps:{
+        options: {
+          argv: "--inplace"
+        },
+        all: ['img/*.png']
+      },
       watch: {
         jekyll: {
           files: ['_posts/*.md','_posts/**/*.md','css/*.css','_layout/*.html', '_includes/*.html', 'config/*.yml'],
@@ -69,7 +75,9 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-shell-spawn');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-tps');
 
   grunt.registerTask('default', ['clean','copy:localConfig','shell:jekyll','copy:categories','copy:tags']);
   grunt.registerTask('git', ['clean','copy:gitConfig','shell:jekyll','copy:categories','copy:tags','shell:gitAdd','shell:gitCi','shell:gitPush']);
+  grunt.registerTask('tps',['tps']);
 }
