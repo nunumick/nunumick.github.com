@@ -12,7 +12,7 @@ tags:
 
 设定 div 容器的样式如下：
 
-{% highlight html %}
+{% highlight css %}
 .win{
   padding:0 10px;/*左右padding各为10像素*/
   border:5px solid #ddd;/*边框为5*/
