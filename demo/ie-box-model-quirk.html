@@ -12,37 +12,40 @@ body{text-align:center;}
   margin-left:-10px;
 }
 #wr_first {
-  float: left;
-  height: 70px;
-  width: 10px;
   margin-right: -1px;
 }
 .wr {
   float: left;
   height: 70px;
   width: 10px;
+  position:relative;
 }
 .wrb {
   float: left;
   width: 10px;
   height: 30px;
   border-left: 1px black solid;
-  margin-top: 40px;
-  vertical-align: top;
+  position:absolute;
+  bottom:0;
 }
 .wrs {
   float: left;
   width: 10px;
   height: 10px;
   border-left: 1px black solid;
-  margin-top: 60px;
+  position:absolute;
+  bottom:0;
 }
 .wrm {
   float: left;
   width: 10px;
   height: 20px;
   border-left: 1px black solid;
-  margin-top: 50px;
+  position:absolute;
+  bottom:0;
+}
+.wrdesc{
+  position:absolute;
 }
 #wr_last {
   float: left;
@@ -59,7 +62,7 @@ body{text-align:center;}
 <body>
 <div class="grid">
   <div class="widthruler">
-    <div id="wr_first"> </div>
+    <div id="wr_first" class="wr"></div>
     <div class="wr"><div class="wrb"><span class="wrdesc">0</span></div></div>
     <div class="wr"><div class="wrs"></div></div>
     <div class="wr"><div class="wrs"></div></div>
@@ -93,7 +96,7 @@ body{text-align:center;}
     <div class="wr"><div class="wrb"><span class="wrdesc">300</span></div></div>
     <div class="wr"><div class="wrs"></div></div>
     <div class="wr"><div class="wrs"></div></div>
-    <div id="wr_last"><div class="wrs"><span class="wrdesc">330</span></div></div></div>
+    <div id="wr_last" class="wr"><div class="wrs"></div></div></div>
 
   <div class="win">没有使用文档类型，在IE浏览器下边框以内部分是200px，非IE内核浏览器中则是230px，参考标尺</div>
 </div>
