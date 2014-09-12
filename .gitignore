@@ -3,6 +3,7 @@ _posts/work/
 _posts/draft/
 _posts/test/
 _site/
+config/_config_local.yml
 node_modules/
 .DS_Store
 *.swp

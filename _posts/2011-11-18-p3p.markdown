@@ -2,7 +2,7 @@
 layout: post
 title: 也谈IE浏览器P3P隐私策略
 category: web
-tags: 
+tags:
     - p3p
     - privacy
     - browser
@@ -17,7 +17,7 @@ P3P(Platform for Privacy Preferences Project)是W3C公布的一项隐私保护�
 W3C公布这项协议之后，仅IE系列浏览器支持该协议，一直从版本6至目前的版本9乃至以后版本都支持，IE浏览器设置里有一个隐私选项就是这个了，如图：
 <img src="http://nunumick.me/blog/usr/uploads/2011/11/3916672175.png" />
 
-可以看到，隐私策略设置默认阻止不受信任的第三方网站的cookie。这里需要明白一点什么是“第三方”，这是词是相对的指代，举个例子：用户在浏览A网站域下的页面，A就是第一方，同一个进程里除A以外的就是第三方网站。假设是在浏览B网站，那B网站之外的就是第三方网站。再具体些，我正在浏览淘宝商城首页www.tmall.com，页面当中调用了taobao.com域下的某个接口页面，因为是不同域，tmall.com是第一方，taobao.com是第三方。简单理解：被嵌套或被引用的非同域网站即为第三方网站。如果按照IE浏览器的默认隐私协议，第三方的cookie设置会受到限制，会出现cookie拿不到的情况。
+可以看到，隐私策略设置默认阻止不受信任的第三方网站的cookie。这里需要明白一点什么是“第三方”，这是词是相对的指代，举个例子：用户在浏览A网站域下的页面，A就是第一方，同一个进程里除A以外的就是第三方网站。假设是在浏览B网站，那B网站之外的就是第三方网站。简单理解：被嵌套或被引用的非同域网站即为第三方网站。如果按照IE浏览器的默认隐私协议，第三方的cookie设置会受到限制，会出现cookie拿不到的情况。
 
 在当今复杂多样的web世界，网站页面之间互相引用、嵌套的情况多有发生，没准就会碰到A嵌套B，B的cookie设置实效的情况，当然，这种情况目前只会发生在IE浏览器下，不过没准以后chrome、firefox也发个支持p3p的版本出来，那世界就和谐了。
 <img src="http://nunumick.me/blog/usr/uploads/2011/11/747800483.png" />
@@ -44,7 +44,7 @@ A域网站b页面：test-b.php(nunumick.me域)
 ?>
 {% endhighlight %}
 
-B域网站页面：test-main.php(tmall.com域)
+B域网站页面：test-main.php
 {% highlight html %}
 <body>
 <iframe src="A域a页面URL"></iframe>
@@ -71,59 +71,6 @@ A域页面被第三方，访问B域页面，预期结果是输出"hello p3p"，�
 
 **需要注意的是，一定要在设置cookie或者session之前设置好P3P header。**
 
-P3P设置情况对比一览
-<table width="580" border="1" style="border:1px solid #ddd">
-<caption style="border:1px solid #ddd;font-weight:700;text-align:center">P3P设置情况对比一览</caption>
-<tbody><tr>
-    <th>P3P header Pos</th>
-    <th>测试页</th>
-    <th>IE6</th>
-    <th>IE7</th>
-    <th>IE8</th>
-    <th>IE9</th>
-    <th>FF</th>
-    <th>Chrome</th>
-    <th>Opera</th>
-    <th>Safari</th>
-</tr>
-<tr>
-    <td>未设置</td>
-    <td><a href="http://www.tmall.com/test/p3p/test-main.php" target="_blank">none</a></td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-</tr>
-<tr>
-    <td>在设置cookie之前</td>
-    <td><a href="http://www.tmall.com/test/p3p/test-main.php?pos=1" target="_blank">before</a></td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-</tr>
-<tr>
-    <td>在设置cookie之后</td>
-    <td><a href="http://www.tmall.com/test/p3p/test-main.php?pos=3" target="_blank">after</a></td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>NO</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-    <td>YES</td>
-</tr>
-</tbody></table>
-
 ####2.使用隐私配置XML
 
 ####延伸知识
@@ -137,7 +84,7 @@ Compact policies are essentially summaries of P3P policies. They can be used by 
 For an in-depth explanation of compact policies, we refer to the P3P1.0[4] specification. Here, we limit to stating the syntax:
 compact-policy-field = `CP="` compact-policy `"`
 
-compact-policy = compact-token *(" " compact-token) 
+compact-policy = compact-token *(" " compact-token)
 
 compact-token = compact-access |
 compact-disputes |
@@ -147,29 +94,29 @@ compact-purpose |
 compact-recipient |
 compact-retention |
 compact-categories |
-compact-test 
+compact-test
 
 compact-access = "NOI" | "ALL" | "CAO" | "IDC" | "OTI" | "NON"
 
-compact-disputes = "DSP" 
+compact-disputes = "DSP"
 
 compact-remedies = "COR" | "MON" | "LAW"
 
-compact-non-identifiable = "NID" 
+compact-non-identifiable = "NID"
 
-compact-purpose = "CUR" | "ADM" [creq] | "DEV" [creq] | "TAI" [creq] | 
-"PSA" [creq] | "PSD" [creq] | "IVA" [creq] | "IVD" [creq] | 
+compact-purpose = "CUR" | "ADM" [creq] | "DEV" [creq] | "TAI" [creq] |
+"PSA" [creq] | "PSD" [creq] | "IVA" [creq] | "IVD" [creq] |
 "CON" [creq] | "HIS" [creq] | "TEL" [creq] | "OTP" [creq]
 
 creq = "a" | "i" | "o"
 
-compact-recipient = "OUR" | "DEL" [creq] | "SAM" [creq] | "UNR" [creq] | 
+compact-recipient = "OUR" | "DEL" [creq] | "SAM" [creq] | "UNR" [creq] |
 "PUB" [creq] | "OTR" [creq]
 
 compact-retention = "NOR" | "STP" | "LEG" | "BUS" | "IND"
 
-compact-category = "PHY" | "ONL" | "UNI" | "PUR" | "FIN" | "COM" | 
-"NAV" | "INT" | "DEM" | "CNT" | "STA" | "POL" | 
+compact-category = "PHY" | "ONL" | "UNI" | "PUR" | "FIN" | "COM" |
+"NAV" | "INT" | "DEM" | "CNT" | "STA" | "POL" |
 "HEA" | "PRE" | "LOC" | "GOV" | "OTC"
 
 compact-test = "TST"
