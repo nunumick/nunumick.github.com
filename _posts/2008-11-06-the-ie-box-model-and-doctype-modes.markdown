@@ -24,11 +24,15 @@ tags:
 
 如果未设置文档类型，在IE浏览器下的效果为:
 
+![](/img/quirk-box.png)
+
 DEMO: [怪癖模式下的IE盒模型](/demo/ie-box-model-quirk.html)
 
 容器的总宽度为200px，显然并不是我们所期望的。
 
 再看下设置了文档类型的情况：
+
+![](/img/normal-box.png)
 
 DEMO: [设置文档类型后的IE盒模型](/demo/ie-box-model-doctype.html)
 
