@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+body{text-align:center;}
+/*标尺*/
+.grid{width:330px;margin:0 auto;padding-top:18px;text-align:left;}
+.widthruler {
+  background: khaki;
+  width: 350px;
+  height: 70px;
+  margin-bottom:10px;
+  margin-left:-10px;
+}
+#wr_first {
+  float: left;
+  height: 70px;
+  width: 10px;
+  margin-right: -1px;
+}
+.wr {
+  float: left;
+  height: 70px;
+  width: 10px;
+}
+.wrb {
+  float: left;
+  width: 10px;
+  height: 30px;
+  border-left: 1px black solid;
+  margin-top: 40px;
+  vertical-align: top;
+}
+.wrs {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border-left: 1px black solid;
+  margin-top: 60px;
+}
+.wrm {
+  float: left;
+  width: 10px;
+  height: 20px;
+  border-left: 1px black solid;
+  margin-top: 50px;
+}
+#wr_last {
+  float: left;
+  height: 70px;
+  width: 3px;
+}
+.win{
+  padding:0 10px;/*左右padding各为10像素*/
+  border:5px solid #ddd;/*边框为5*/
+  width:200px;/*不使用文档类型，这个宽度就是总宽，而非内容宽度*/
+}
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="widthruler">
+    <div id="wr_first"> </div>
+    <div class="wr"><div class="wrb"><span class="wrdesc">0</span></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrm"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrb"><span class="wrdesc">100</span></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrm"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrb"><span class="wrdesc">200</span></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrm"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrb"><span class="wrdesc">300</span></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div class="wr"><div class="wrs"></div></div>
+    <div id="wr_last"><div class="wrs"><span class="wrdesc">330</span></div></div></div>
+
+  <div class="win">没有使用文档类型，在IE浏览器下边框以内部分是200px，非IE内核浏览器中则是230px，参考标尺</div>
+</div>
+</body>
+</html>
