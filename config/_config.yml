@@ -2,7 +2,8 @@
 #   main config   #
 # --------------- #
 markdown: rdiscount
-pygments: true
+#pygments: true
+highlighter: pygments
 paginate: 5
 permalink: /blog/:year/:month/:day/:title.html
 exclude: [node_modules,Gruntfile.js,README.md,package.json]
