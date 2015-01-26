@@ -49,6 +49,7 @@ git config --global user.email 'email'
 
 **ssh配置**
 
+从个人仓库同步 .ssh 到本机相同目录下即可
 
 ### svn
 
@@ -95,6 +96,8 @@ git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 {% highlight bash %}
 ln -s ~/.vim/vimrc .vimrc
 {% endhighlight %}
+
+最后打开 vi，使用:BundleInstall 命令安装插件
 
 ### jekyll
 
