@@ -146,4 +146,5 @@ pip install pygments
 * moom 窗口切换
 * charles 调试利器
 * mou 文档编写记录
+* xcode 软件开发工具
 
