@@ -2,15 +2,17 @@
 #   main config   #
 # --------------- #
 markdown: rdiscount
-pygments: true
+#pygments: true
+highlighter: pygments
 paginate: 5
 permalink: /blog/:year/:month/:day/:title.html
 exclude: [node_modules,Gruntfile.js,README.md,package.json]
+gems: [jekyll-paginate]
 
 # --------------- #
 #  custom config  #
 # --------------- #
-blogroot: 'http://blog.nunumick.taobao.net'
+blogroot: 'http://nunumick.github.io'
 blogname: '默尘'
 blogdesc: '--  小隐于山，中隐于市，大隐于心 --'
 blogauthor: 'nunumick'
