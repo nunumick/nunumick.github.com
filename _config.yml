@@ -35,17 +35,17 @@ jekyll-archives:
     - categories
     - tags
   layouts:
-    category: archive-categories
-    tag: archive-tags
+    category: archive-categories-local
+    tag: archive-tags-local
   permalinks:
-    tag: /blog/tag/:name/
+    tag: /blog/tags/:name/
     category: /blog/categories/:name/
 
 # Custom Archives
 collections:
   archives:
     output: true
-    permalink: /archives/:path/
+    permalink: /blog/:path/
   lists:
     output: true
     permalink: /blog/:path/

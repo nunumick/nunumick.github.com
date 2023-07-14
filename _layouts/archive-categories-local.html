@@ -2,13 +2,11 @@
 layout: base
 ---
 <ul class="posts">
-  {% for post in site.posts %}
-    {% if post.tags contains page.tag or post.tag == page.tag %}
+  {% for post in page.posts %}
     <li>
       <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
       <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
-    {% endif %}
   {% endfor %}
 </ul>
-<p><a href="{{ site.base_url }}/tags/">所有标签</a></p>
+
