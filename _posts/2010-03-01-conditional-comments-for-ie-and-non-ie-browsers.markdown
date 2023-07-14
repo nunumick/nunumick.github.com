@@ -9,21 +9,21 @@ tags:
 
 IE浏览器的条件注释虽不太常用，却异常强大，不仅可以用来区分IE浏览器版本
 
-####仅IE6:
+#### 仅IE6:
 {% highlight html %}
 <!--[if IE6]>
 怎么该，怎么该……
 <![endif]-->
 {% endhighlight %}
 
-####仅IE7:
+#### 仅IE7:
 {% highlight html %}
 <!--[if IE7]>
 怎么该，怎么该……
 <![endif]-->
 {% endhighlight %}
 
-####还可以牛13滴用来区分非IE浏览器：
+#### 还可以牛13滴用来区分非IE浏览器：
 {% highlight html %}
 <!--[if !IE]><-->
 怎么该，怎么该……

@@ -2,7 +2,7 @@
 layout: post
 title: doctype与hover伪类
 category: html
-tags: 
+tags:
     - doctype
     - hover
     - browser
@@ -45,5 +45,5 @@ tags:
 </html>
 {% endhighlight %}
 
-####延伸阅读
+#### 延伸阅读
 <a href="http://nunumick.me/blog/2010/01/html5-doctype-and-img-space.html" target="_blank">html5 doctype与图片多余空白</a>

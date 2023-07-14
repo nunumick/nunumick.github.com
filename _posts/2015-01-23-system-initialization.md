@@ -32,7 +32,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ### git
 
 **安装git**
-{% highlight bash %}
+{% highlight shell %}
 brew install git
 {% endhighlight %}
 

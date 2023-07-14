@@ -3,7 +3,7 @@ layout: post
 title: 有趣的兼容性测试-iframe文档对象获取
 categories:
     - html
-    - JavaScript
+    - javascript
 tags:
     - iframe
     - browser

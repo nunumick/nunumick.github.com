@@ -1,63 +1,63 @@
-    <artical class="post">
-    {% if post %}
-        <h2 class="entry_title"><a href="{{ site.blogroot }}{{ post.url }}">{{ post.title }}</a></h2>
-        <p class="entry_data">
-        <span>作者：nunumick</span>
-        <span>发布时间：{{ post.date | date_to_string}}</span>
-        {% if post.categories %}
-        <span class="entry_cate">分类：
-            {% for category in post.categories %}
-            {% if forloop.index > 1 %},{% endif %}
-            <a href="{{ site.blogroot }}/categories/{{ category | downcase}}/">{{category}}</a>
-            {% endfor %}
-        </span>
-        {% endif %}
-        </p>
-        <div class="entry_cont">
-            {{ post.content }}
-        </div>
-		<p class="entry_data">
-        {% if post.tags %}
-        <span class="entry_cate">标签：
-            {% for tag in post.tags %}
-            {% if forloop.index > 1 %},{% endif %}
-            <a href="{{ site.blogroot }}/tag/{{tag}}/">{{tag}}</a>
-            {% endfor %}
-        </span>
-        <br />
-        {% endif %}
-        &lt;&lt;&lt; EOF
-        <br />
-        </p>
-    {% else %}
-        <h2 class="entry_title"><a href="{{ site.blogroot }}{{ page.url }}">{{ page.title }}</a></h2>
-		<p class="entry_data">
-		<span>作者：nunumick</span>
-        <span>发布时间：{{ page.date | date_to_string}}</span>
-        {% if page.categories %}
-        <span class="entry_cate">分类：
-            {% for category in page.categories %}
-            {% if forloop.index > 1 %},{% endif %}
-            <a href="{{ site.blogroot }}/categories/{{ category | downcase }}/">{{category}}</a>
-            {% endfor %}
-        </span>
-        {% endif %}
-		</p>
-        <div class="entry_cont">
-            {{ content }}
-        </div>
-		<p class="entry_data">
-        {% if page.tags %}
-        <span class="entry_cate">标签：
-            {% for tag in page.tags %}
-            {% if forloop.index > 1 %},{% endif %}
-            <a href="{{ site.blogroot }}/tag/{{tag}}/">{{tag}}</a>
-            {% endfor %}
-        </span>
-        <br />
-        {% endif %}
-        &lt;&lt;&lt; EOF
-        <br />
-        </p>
-    {% endif %}
-    </artical>
+<artical class="post">
+{% if post %}
+  <h2 class="entry_title"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="entry_data">
+  <span>作者：{{ site.blogauthor }}</span>
+  <span>发布时间：{{ post.date | date_to_string}}</span>
+  {% if post.categories %}
+  <span class="entry_cate">分类：
+    {% for category in post.categories %}
+    {% if forloop.index > 1 %},{% endif %}
+    <a href="{{ site.url }}{{ site.base_url }}/categories/{{ category | downcase}}/">{{category}}</a>
+    {% endfor %}
+  </span>
+  {% endif %}
+  </p>
+  <div class="entry_cont">
+    {{ post.content }}
+  </div>
+  <p class="entry_data">
+  {% if post.tags %}
+  <span class="entry_cate">标签：
+    {% for tag in post.tags %}
+    {% if forloop.index > 1 %},{% endif %}
+    <a href="{{ site.url }}{{ site.base_url }}/tag/{{tag}}/">{{tag}}</a>
+    {% endfor %}
+  </span>
+  <br />
+  {% endif %}
+  &lt;&lt;&lt; EOF
+  <br />
+  </p>
+{% else %}
+  <h2 class="entry_title"><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></h2>
+  <p class="entry_data">
+  <span>作者：{{ site.blogauthor }}</span>
+  <span>发布时间：{{ page.date | date_to_string}}</span>
+  {% if page.categories %}
+  <span class="entry_cate">分类：
+    {% for category in page.categories %}
+    {% if forloop.index > 1 %},{% endif %}
+    <a href="{{ site.url }}{{ site.base_url }}/categories/{{ category | downcase }}/">{{category}}</a>
+    {% endfor %}
+  </span>
+  {% endif %}
+  </p>
+  <div class="entry_cont">
+    {{ content }}
+  </div>
+  <p class="entry_data">
+  {% if page.tags %}
+  <span class="entry_cate">标签：
+    {% for tag in page.tags %}
+    {% if forloop.index > 1 %},{% endif %}
+    <a href="{{ site.url }}{{ site.base_url }}/tag/{{tag}}/">{{tag}}</a>
+    {% endfor %}
+  </span>
+  <br />
+  {% endif %}
+  &lt;&lt;&lt; EOF
+  <br />
+  </p>
+{% endif %}
+</artical>

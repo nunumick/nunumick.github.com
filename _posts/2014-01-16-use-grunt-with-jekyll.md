@@ -5,6 +5,8 @@ category: frontend
 tags:
     - grunt
     - jekyll
+    - blog
+    - github
 ---
 
 自从使用了 jekyll ，我就一直用它来构建自己的博客，然后把页面托管在 github.com 上，很是方便。
@@ -97,9 +99,9 @@ module.exports = function(grunt){
 值得一提的是shell-spawn这个模块，可以执行命令，使用同步的方式可以完成一些列的命令行任务，超赞！
 
 {% highlight javascript %}
-  options:{
-    async:false //使用同步方式
-  }
+options:{
+  async:false //使用同步方式
+}
 {% endhighlight %}
 
 

@@ -25,7 +25,7 @@ tags:
 
 各浏览器在处理 embed 重载时并不尽相同，在此简单做了测试：<a href="http://nunumick.me/lab/201005/embed.html" target="_blank">Demo</a>
 
-####测试结果：
+#### 测试结果：
 Y：响应重载
 N：不响应重载
 <table width="100%" border="1" cellspacing="0" cellpadding="0">

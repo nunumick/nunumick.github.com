@@ -1,21 +1,21 @@
 ---
 layout: post
 title: 容易被忽略的JS脚本特性
-category: JavaScript
+category: javascript
 tags:
-    - JavaScript
-    - ECMA
+    - javascript
+    - ecma
 ---
 
-###一、容易被忽略的局部变量
+### 一、容易被忽略的局部变量
 {% highlight javascript %}
-    var a = 5;
-    (function(){
-       alert(a);
-       var a = a ++;
-       alert(a);
-    })()
-    alert(a);
+var a = 5;
+(function(){
+   alert(a);
+   var a = a ++;
+   alert(a);
+})()
+alert(a);
 {% endhighlight %}
 
 思考这段代码的执行结果。<br />执行后，看看是否和你想象的一致？
@@ -41,25 +41,25 @@ ok，这段代码里核心的知识点是 var a = a++，其中两个变量 a 都
 因此上面的代码可以等价于:
 
 {% highlight javascript %}
-    var a;
-    a = 5;
-    (function(){
-       var a;
-       alert(a);
-       a = a ++;
-       alert(a);
-    })()
-    alert(a);
+var a;
+a = 5;
+(function(){
+   var a;
+   alert(a);
+   a = a ++;
+   alert(a);
+})()
+alert(a);
 {% endhighlight %}
 这样应该会更容易理解了。
 
-###二、容易被忽略的全局变量
+### 二、容易被忽略的全局变量
 
 {% highlight javascript %}
-    (function(){
-       var a = b = 5;
-    })()
-    alert(b);
+(function(){
+   var a = b = 5;
+})()
+alert(b);
 {% endhighlight %}
 这是玉伯几天前分享到的知识点，蛮有意义的，在此也做个分析。
 
@@ -109,8 +109,8 @@ var a = b = 5;等同为 var a; a = b = 5;两条语句，后者是赋值表达式
 很明显，中间的一个步骤使得变量 b 被声明为全局变量，明白之后，我们不难找到代码的优化点：只需将变量 b 显式声明为局部变量：
 
 {% highlight javascript %}
-    (function(){
-       var a,b;
-       a = b = 5;
-    })()
+(function(){
+   var a,b;
+   a = b = 5;
+})()
 {% endhighlight %}

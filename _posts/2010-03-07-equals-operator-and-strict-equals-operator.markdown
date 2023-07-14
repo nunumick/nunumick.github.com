@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Javascript等同(==)与恒等(===)运算符
-category: JavaScript
+title: JavaScript等同(==)与恒等(===)运算符
+category: javascript
 tags:
-    - JavaScript
+    - javascript
     - operator
 ---
 
@@ -20,7 +20,7 @@ Use '===' to compare with '0'
 
 看看ECMA规范中是如何对==和===操作符进行定义的，了解其深层的规则和jslint提示的缘由
 
-####首先介绍==
+#### 首先介绍==
 11.9.1 等同运算符( == )
 
     运算符规则如下所示：
@@ -31,7 +31,7 @@ Use '===' to compare with '0'
     5. 对第4步的结果与第2步结果执行比对（参考 11.9.3）;
     6. 返回第5步结果;
 
-####再来详细了解比对过程(11.9.3)
+#### 再来详细了解比对过程(11.9.3)
 11.9.3 抽象的等同比对算法
 
     假设有 x,y 进行比较 ，则有 x == y;
@@ -58,7 +58,7 @@ Use '===' to compare with '0'
     21. 如果x类型为Object且y类型为String或者Number，先将x转换为基本类型(ToPrimitive)，再进行比对，返回结果。
     22. 返回 false.
 
-####接着看恒等运算符（===）
+#### 接着看恒等运算符（===）
 11.9.4 严格等同运算符( === )
 
     运算符规则如下所示：
@@ -69,7 +69,7 @@ Use '===' to compare with '0'
     5. 对第4步的结果与第2步结果执行比对（参考 11.9.6）;
     6. 返回第5步结果;
 
-####这几步和==运算符是一样的，我们着重来看第5步的比对过程：
+#### 这几步和==运算符是一样的，我们着重来看第5步的比对过程：
 11.9.6 严格性等同运算比对算法
 
     假设有 x,y 进行比较 ，则有 x === y;
@@ -87,7 +87,7 @@ Use '===' to compare with '0'
     12. 如果xy类型均为Boolean(布尔类型)，xy均为true或均为false则返回 true，否则返回 false;
     13. 如果x与y引用同一个对象(object)或者xy引用的对象是Joined关系（参考13.1.2）则返回 true，否则返回 false;
 
-####可以做如下概括：
+#### 可以做如下概括：
 ==运算符在做比对时存在类型转换的可能，而===运算符只在同类型之间比对，是==的严格模式。
 
 1. 类型相同：进行===比对。
@@ -102,6 +102,6 @@ Use '===' to compare with '0'
 
 **恒等必定等同，等同未必恒等，需择之而用！**
 
-###延伸阅读
+### 延伸阅读
 <a href="http://www.jibbering.com/faq/faq_notes/type_convert.html#tcNumber" target="_blank">Javascript Type-Conversion</a>
 

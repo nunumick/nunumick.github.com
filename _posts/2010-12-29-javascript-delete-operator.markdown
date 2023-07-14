@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Javascript学习笔记-delete运算符
-category: JavaScript
+title: JavaScript学习笔记-delete运算符
+category: javascript
 tags:
-    - JavaScript
+    - javascript
     - operator
 ---
 
 关于javascript的delete运算符，<a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Special_Operators/delete_Operator%20target=" target="_blank">MDN</a>里有相关文档。以下是我的学习笔记，更多是要关注特殊情况的使用和注意点。
 
-###一、语法
+### 一、语法
 
 delete后面的表达式必须给出一个属性的引用，比如
 {% highlight javascript %}
@@ -24,17 +24,17 @@ with(o){
 }
 {% endhighlight %}
 
-###二、delete的返回值
+### 二、delete的返回值
 
 delete是普通运算符，会返回true或false。规则为：当被delete的对象的属性存在并且不能被删除时 返回false，否则返回true。 这里的一个特点就是，对象属性不存在时也返回true，所以返回值并非完全等同于删除成功与否。
 {% highlight javascript %}
 var o = {a:1};
 delete o.a; //返回true
 var b = 2;
-delete b;//返回false，ECMA规则约定:使用var和function声明的变量不可以被delete 
+delete b;//返回false，ECMA规则约定:使用var和function声明的变量不可以被delete
 {% endhighlight %}
 
-###三、哪些情况下不允许delete
+### 三、哪些情况下不允许delete
 
 
 上例提到的var和function声明的变量不可以被delete，但隐式声明可以被删除
@@ -47,16 +47,16 @@ delete d;//返回true
 
 不能delete从原型链上继承的属性，但可以删除原型链上的属性
 {% highlight javascript %}
-function Foo(){}  
-Foo.prototype.bar = 42;  
-var foo = new Foo();  
-delete foo.bar;           // 返回true,但并没有起作用 
+function Foo(){}
+Foo.prototype.bar = 42;
+var foo = new Foo();
+delete foo.bar;           // 返回true,但并没有起作用
 alert(foo.bar);           // alerts 42, 属性是继承的
-delete Foo.prototype.bar; // 在原型上删除属性bar 
-alert(foo.bar);           // alerts "undefined", 属性已经不存在，无法被继承 
+delete Foo.prototype.bar; // 在原型上删除属性bar
+alert(foo.bar);           // alerts "undefined", 属性已经不存在，无法被继承
 {% endhighlight %}
 
-###四、特例
+### 四、特例
 
 eval执行的代码中如有通过var和function声明的变量，可以被delete
 {% highlight javascript %}
@@ -70,7 +70,7 @@ alert(a); //报未定义错误
 eval("(function(){var a=1;delete a; return a;})()");//1
 {% endhighlight %}
 
-###五、delete 数组元素
+### 五、delete 数组元素
 
 从数组中delete其元素并不会影响数组的长度
 {% highlight javascript %}

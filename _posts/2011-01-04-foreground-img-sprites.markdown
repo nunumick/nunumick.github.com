@@ -6,7 +6,7 @@ tags:
     - sprites
 ---
 
-###背景知识：
+### 背景知识：
 
 <a href="http://www.alistapart.com/articles/sprites" target="_blank">css sprites</a>是前端开发必须掌握的一项优化技巧，此技巧的意义常被作为基础题放入面试环节。可以这么说：不知道css sprites的前端不是好前端。
 
@@ -51,7 +51,7 @@ css:
 
 那么，使用img sprites有哪些好处呢？
 
-###一、img sprites 的优势：
+### 一、img sprites 的优势：
 
 **1.支持windows高对比度显示模式**
 
@@ -86,7 +86,7 @@ css sprites背景图无法被打印，而img sprites则可以，这一点我力�
 
 当用户禁用图片时，至少可以通过alt注释知道网页要讲些什么
 
-###二、img sprites 的劣势：
+### 二、img sprites 的劣势：
 
 1. 图片过大时会阻塞网页加载进度
 2. 右键另存为图片，会将整张sprites图下载到电脑里
@@ -94,7 +94,7 @@ css sprites背景图无法被打印，而img sprites则可以，这一点我力�
 
 其实css sprites在1、2两方面多少也存在着同样的问题。
 
-###三、如何权衡
+### 三、如何权衡
 
 1. 图片较大或是纯修饰图片的，用css sprites会更好一些
 2. 有具体意义的图片或者需要较快出现图片或者需要照顾特殊用户群体和打印终端的，采用img sprites则会更好

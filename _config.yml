@@ -1,18 +1,51 @@
 # --------------- #
-#   main config   #
-# --------------- #
-markdown: rdiscount
-#pygments: true
-highlighter: pygments
-paginate: 5
-permalink: /blog/:year/:month/:day/:title.html
-exclude: [node_modules,Gruntfile.js,README.md,package.json]
-gems: [jekyll-paginate]
-
-# --------------- #
 #  custom config  #
 # --------------- #
-blogroot: 'http://nunumick.github.io'
-blogname: '默尘'
-blogdesc: '--  小隐于山，中隐于市，大隐于心 --'
-blogauthor: 'nunumick'
+url: ""
+# 不使用baseurl，会整站 blog/ 作为跟目录
+base_url: /blog
+blogroot: https://nunumick.github.io
+blogname: 默尘
+blogdesc: --  小隐于山，中隐于市，大隐于心 --
+blogauthor: nunumick
+
+# --------------- #
+#   main config   #
+# --------------- #
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title.html
+exclude: [Gemfile, Gemfile.lock, node_modules, Gruntfile.js, README.md, package.json]
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-archives
+paginate: 5
+paginate_path: /blog/page:num/
+
+# Markdown Processors
+kramdown:
+  input             : GFM
+  syntax_highlighter: rouge
+
+# Archives
+# Not support on github
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-categories
+    tag: archive-tags
+  permalinks:
+    tag: /blog/tag/:name/
+    category: /blog/categories/:name/
+
+# Custom Archives
+collections:
+  archives:
+    output: true
+    permalink: /archives/:path/
+  lists:
+    output: true
+    permalink: /blog/:path/

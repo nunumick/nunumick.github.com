@@ -1,9 +1,9 @@
-	<artical class="post">
-        <div class="entry_cont">
-            <ol>
-            {% for post in site.posts %}
-            <li><a href="{{ site.blogroot }}{{post.url}}">{{post.title}}</a> ({{ post.date | date_to_string }})</li>
-            {% endfor %}
-            </ol>
-        </div>
-	</artical>
+<artical class="post">
+<div class="entry_cont">
+  <ol>
+    {% for post in site.posts %}
+    <li><a href="{{ site.url }}{{post.url}}">{{post.title}}</a> ({{ post.date | date_to_string }})</li>
+    {% endfor %}
+  </ol>
+</div>
+</artical>

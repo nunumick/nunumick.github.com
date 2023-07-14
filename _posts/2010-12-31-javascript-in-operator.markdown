@@ -1,17 +1,17 @@
 ---
 layout: post
 title: JavaScript学习笔记-详解in运算符
-category: JavaScript
+category: javascript
 tags:
-    - JavaScript
+    - javascript
     - operator
 ---
 
 in运算符是javascript语言中比较特殊的一个，可以单独使用作为判断运算符，也常被用于for...in循环中遍历对象属性
 
-###一、判断
+### 一、判断
 
-####语法
+#### 语法
 
 {% highlight javascript %}
 prop in objectName
@@ -27,7 +27,7 @@ arr.five = '5';
 'length' in arr;//true
 {% endhighlight %}
 
-####原型链
+#### 原型链
 
 in运算符会在整个原型链上查询给定的prop属性
 
@@ -39,7 +39,7 @@ var foo = new Object();
 'hasOwnProperty' in foo;//true;
 {% endhighlight %}
 
-####对象与字面量
+#### 对象与字面量
 
 in运算符在对待某些特定类型（String,Number）的对象和字面量时显得不尽相同
 
@@ -62,7 +62,7 @@ Because JavaScript automatically converts between string primitives and String o
 {% endhighlight %}
 试着这样理解：因为in是运算符而非一个方法(method)，所以无法让string字面量自动转换成String对象，又因为in运算符待查询方不是对象而是一个字符串（按<a href="http://www.crockford.com/" target="_blank">老道Douglas</a>的说法，只是object-like的类型），所以报类型错误。
 
-###二、遍历
+### 二、遍历
 
 很常用到的for...in循环语句，此语句中的in需要遵循另外一套语法规范：
 {% highlight javascript %}
@@ -71,18 +71,18 @@ statement
 {% endhighlight %}
 与单独使用in作为运算符不同，for...in循环语句只遍历用户自定义的属性，包括原型链上的自定义属性，而不会遍历内置(build-in)的属性，如toString。
 
-####对象
+#### 对象
 
 {% highlight javascript %}
 function Bird(){
     this.wings = 2;
     this.feet = 4;
     this.flyable = true;
-} 
+}
 var chicken = new Bird();
 chicken.flyable = false;
 for(var p in chicken){
-    alert('chicken.' + p + '=' + chicken[p]);    
+    alert('chicken.' + p + '=' + chicken[p]);
 }
 {% endhighlight %}
 String对象，经过测试Firefox,Chrome,Opera,Safari浏览器都是给出了注释中的结果，只有IE浏览器只给出'more'和'world'
@@ -97,7 +97,7 @@ for(var p in str){
 }
 {% endhighlight %}
 
-####字面量
+#### 字面量
 
 遍历数组字面量的键值和属性
 {% highlight javascript %}
@@ -118,7 +118,7 @@ for(var p in str){
 }
 {% endhighlight %}
 
-###综上
+### 综上
 
 ECMA虽然有这方面的规范，但浏览器之间还是存在着差异，鉴于此，并不推荐用for...in去遍历字符串，也不推荐拿去遍历数组（如例子所示，为数组加上自定义属性，遍历就会被搞乱）
 
