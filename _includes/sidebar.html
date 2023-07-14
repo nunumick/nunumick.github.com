@@ -7,7 +7,7 @@
       {% endfor %}
     </ul>
   </div>
-  {% if site.related_posts %}
+  {% if site.related_posts and page.type != 'category' and page.type != 'tag' and page.type != 'post list' %}
   <div class="widget">
     <h3>相关文章</h3>
     <ul>

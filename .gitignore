@@ -2,6 +2,9 @@ _drafts/
 _posts/work/
 _posts/draft/
 _posts/test/
+_archives/categories/
+_archives/tags/
+_archives/years/
 _site/
 config/_config_local.yml
 node_modules/

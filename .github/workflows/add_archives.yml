@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Jekyll Blog Archive
-        uses: kannansuresh/jekyll-blog-archive-workflow@v1.0.3
+        uses: nunumick/jekyll-blog-archive-workflow@v1.0.0
         with:
           archive_url: "https://nunumick.github.io/archives/archivedata"
           archive_folder_path: "_archives"
