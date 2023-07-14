@@ -15,7 +15,7 @@ jobs:
       - name: Jekyll Blog Archive
         uses: nunumick/jekyll-blog-archive-workflow@v1.0.0
         with:
-          archive_url: "https://nunumick.github.io/archives/archivedata"
+          archive_url: "https://nunumick.github.io/blog/archivedata"
           archive_folder_path: "_archives"
 
       - name: setup git config
