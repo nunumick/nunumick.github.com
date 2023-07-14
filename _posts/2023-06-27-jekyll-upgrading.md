@@ -20,6 +20,8 @@ tags:
 
 jekyll serve 比之前更简便了。
 
+另外顺手用 [github issues](https://utteranc.es/?installation_id=39629941&setup_action=install){:target="_blank"} 完成了对 disqus 的替换，用作文章的[评论](#PostComments)系统。
+
 ### Archives 的支持
 
 本地使用 jekyll-archives 插件，github 采用 [workflow](https://github.com/features/actions){:target="_blank"} 生成 archives [collections](https://jekyllrb.com/docs/collections/){:target="_blank"}。调整 permalink 保证两个环境可以得到一致的访问体验。
