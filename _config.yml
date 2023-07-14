@@ -28,7 +28,7 @@ kramdown:
   input             : GFM
   syntax_highlighter: rouge
 
-# Archives
+# Local Archives by archives plugin
 # Not support on github
 jekyll-archives:
   enabled:
@@ -42,6 +42,8 @@ jekyll-archives:
     category: /blog/categories/:name/
 
 # Custom Archives
+# archives: github archives workflow
+# lists: posts and tags collections
 collections:
   archives:
     output: true

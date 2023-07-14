@@ -16,12 +16,35 @@ tags:
 
 比较庆幸的是升级对 post 内容格式是兼容的，主要的改动在 plugins 的升级替换，引入方式有变化但不多。
 
-尝试过想用新版的分类和tags，好像会影响原有的文章路径格式，会造成旧链接 404。所以最好还是采用 _plugins 插件，很可惜 github 因为安全策略仍然不支持自定义插件，最终采用的是 [github action](https://aneejian.com/automated-jekyll-archives-github-pages/) 构建来代替原来的[本地 grunt 构建](/blog/2014/01/16/use-grunt-with-jekyll.html)再同步。
+尝试过想用新版的分类和tags，好像会影响原有的文章路径格式，会造成旧链接 404。所以最好还是采用 _plugins 插件，很可惜 github 因为安全策略仍然不支持自定义插件，最终采用的是 [github action](https://github.com/nunumick/jekyll-blog-archive-workflow){:target="_blank"} 构建来代替原来的[本地 grunt 构建](/blog/2014/01/16/use-grunt-with-jekyll.html){:target="_blank"}再同步。
 
-serve 比之前更简便了。
+jekyll serve 比之前更简便了。
 
+### Archives 的支持
 
-### 必要步骤
+本地使用 jekyll-archives 插件，github 采用 [workflow](https://github.com/features/actions){:target="_blank"} 生成 archives [collections](https://jekyllrb.com/docs/collections/){:target="_blank"}。调整 permalink 保证两个环境可以得到一致的访问体验。
+
+```yaml
+# Local Archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-categories-local
+    tag: archive-tags-local
+  permalinks:
+    tag: /blog/tags/:name/
+    category: /blog/categories/:name/
+
+# Custom Archives for github
+collections:
+  archives:
+    output: true
+    permalink: /blog/:path/
+```
+
+### 其他必要步骤
 
 bundle Gemfile 管理项目，安装依赖
 
@@ -104,10 +127,10 @@ xxx目录
 
 **参考链接**
 
-1. [https://jekyllrb.com/docs/](https://jekyllrb.com/docs/)
-2. [https://jekyllrb.com/docs/upgrading/3-to-4/](https://jekyllrb.com/docs/upgrading/3-to-4/)
-3. [https://jekyllrb.com/docs/configuration/default/](https://jekyllrb.com/docs/configuration/default/)
-4. [https://rubygems.org/pages/download](https://rubygems.org/pages/download)
-5. [https://mademistakes.com/mastering-jekyll/site-url-baseurl/](https://mademistakes.com/mastering-jekyll/site-url-baseurl/)
-6. [https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md)
-7. [https://rouge-ruby.github.io/docs/file.Languages.html](https://rouge-ruby.github.io/docs/file.Languages.html)
+1. [https://jekyllrb.com/docs/](https://jekyllrb.com/docs/){:target="_blank"}
+2. [https://jekyllrb.com/docs/upgrading/3-to-4/](https://jekyllrb.com/docs/upgrading/3-to-4/){:target="_blank"}
+3. [https://jekyllrb.com/docs/configuration/default/](https://jekyllrb.com/docs/configuration/default/){:target="_blank"}
+4. [https://rubygems.org/pages/download](https://rubygems.org/pages/download){:target="_blank"}
+5. [https://mademistakes.com/mastering-jekyll/site-url-baseurl/](https://mademistakes.com/mastering-jekyll/site-url-baseurl/){:target="_blank"}
+6. [https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md){:target="_blank"}
+7. [https://rouge-ruby.github.io/docs/file.Languages.html](https://rouge-ruby.github.io/docs/file.Languages.html){:target="_blank"}
