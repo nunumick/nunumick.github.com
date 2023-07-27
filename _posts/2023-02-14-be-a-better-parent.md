@@ -1,10 +1,9 @@
 ---
 layout: post
 title: 小学阶段育儿体会，如何成为更好的父母
-category:
-    - life
-    - family
+category: life
 tags:
+    - family
     - education
     - children
     - parent
