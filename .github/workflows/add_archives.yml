@@ -1,12 +1,7 @@
 name: Generate Jekyll Archives
 # description: Generate categories, tags and years archive files.
 # 触发条件修改为在deploy部署后，post更新page构建部署，archivedata完成更新后再触发archive文件生成。
-on:
-  workflow_dispatch:
-  deployment
-#  push:
-#    paths:
-#      - "_posts/**"
+on: deployment
 
 jobs:
   build:
