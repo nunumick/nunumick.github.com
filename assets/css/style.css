@@ -21,6 +21,13 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 input, textarea { font-family: Helvetica, Arial, sans-serif; font-size: 100%; }
 
+@font-face {
+  font-family: 'iconfont';  /* Project id 4466894 */
+  src: url('https://at.alicdn.com/t/a/font_4466894_uwlws7bxtdp.woff2?t=1710470015168') format('woff2'),
+  url('https://at.alicdn.com/t/a/font_4466894_uwlws7bxtdp.woff?t=1710470015168') format('woff'),
+  url('https://at.alicdn.com/t/a/font_4466894_uwlws7bxtdp.ttf?t=1710470015168') format('truetype');
+}
+
 input, textarea {
   font-size: 13px;
   padding: 2px;
@@ -444,6 +451,26 @@ ol#comment_list li .respond textarea {
   border-bottom: none;
 }
 
+#footer a i{
+  font-family: "iconfont";
+  font-style:normal;
+  vertical-align:bottom;
+  font-size:20px;
+  color:#f92672;
+  line-height:23px;
+}
+
+.icp i:before {
+  content: "\e601";
+}
+
+.security i:before {
+  content: "\e608";
+  font-size:15px;
+  color:transparent;
+  background:url(https://img.alicdn.com/imgextra/i2/O1CN0185atxl21LObnbzfiX_!!6000000006968-2-tps-20-20.png) 0 0 no-repeat;
+  background-size:cover;
+}
 
 /* -----------------
  *  * misc
