@@ -126,6 +126,8 @@ cat config
 新建 hooks/post-receive，编辑指令。
 ```bash
 #!/bin/bash
+#可以输出一些信息
+echo "git user: $USER. start pushing to github and cloud."
 #完成接收后执行命令，推送代码到远程仓库
 exec git push -u github & git push -u cloud
 ```
@@ -158,6 +160,15 @@ done
 到这里已完成工作流程图中所有的 git 仓库和系统设置，整体可以运转良好：
 > 本地文件生产 -> nas服务器托管 -> 推送到 github 与云服务器 -> 文件部署
 
+```bash
+#local repo
+git push origin master
+#pushing logs
+...
+remote: git user: gitter. start pushing to github and cloud.
+remote: remote: Ref refs/heads/master received. Deploying master branch to production...
+...
+```
 
 接下来要关心的是如何提供稳定的 web 服务，留到下期再续……
 
