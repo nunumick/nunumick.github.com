@@ -241,6 +241,10 @@ h2.entry_title a {
   color:#333;
 }
 
+.post ol li ol {
+  margin-bottom:0;
+}
+
 
 /* = pages nav */
 ol.page-navigator {
