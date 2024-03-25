@@ -221,6 +221,7 @@ h2.entry_title a {
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
   width: 100%;
+  word-break:break-word;
 }
 
 .post img {
