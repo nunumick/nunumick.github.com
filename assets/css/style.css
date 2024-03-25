@@ -14,7 +14,7 @@ body {
   color: #444;
   font-size: 13px;
   line-height: 1.7;
-  font-family: Georgia,Times,"Times New Roman",serif;
+  /*font-family: Georgia,Times,"Times New Roman",serif;*/
 }
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
@@ -545,6 +545,10 @@ img.alignright { margin: 4px 0 0 15px; }
     width:100%;
     max-width:100%;
   }
+  .post a {
+    word-break:break-all;
+  }
+
   #footer{
     width:auto;
     font-size:12px;
