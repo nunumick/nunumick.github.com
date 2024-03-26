@@ -18,11 +18,11 @@ tags:
 3. webhooks 监听
 4. 服务器架设 git server，本地提交同步提交多个 remote，基于 server hooks 触发构建
 
-由于我还有个 NAS 服务器并已经开通了公网服务，加上公共云服务器，可以做到三地同步部署，这里的想法是以 NAS 做主要的远程代码仓库，以 github 和云服务器做自动部署并提供镜像版网站服务。<br />![](/assets/img/githooks_flow.jpeg)<br />如流程示意图所示，源码只 push 到 NAS Git Server，经由 git hook 自动同步至 Github 和云服务器，此举可避免本地仓库管理多个 remote 地址，也可以通过 NAS 的“代理”服务和 Github 保持比较高质量的连接。
+由于我还有个 NAS 服务器并已经开通了公网服务，加上公共云服务器，可以做到三地同步部署，这里的想法是以 NAS 做主要的远程代码仓库，以 github 和云服务器做自动部署并提供镜像版网站服务。<br />![]({{site.cdnroot}}/assets/img/githooks_flow.jpeg)<br />如流程示意图所示，源码只 push 到 NAS Git Server，经由 git hook 自动同步至 Github 和云服务器，此举可避免本地仓库管理多个 remote 地址，也可以通过 NAS 的“代理”服务和 Github 保持比较高质量的连接。
 ### NAS 部署 Git Server
 群晖系统中可以安装 Git Server 应用。大体上按照[官方指引](https://kb.synology.cn/zh-cn/DSM/help/Git/git)操作即可，有几个小点需要特别注意。
 #### 设置独立的 git 账号
-由于 git 服务需要 nas 开通 ssh，因此可以为 git 的管理操作创建单独的账号，与系统管理员账号分开进而保证权限独立、保障系统安全性，git 账户名在网络上公开也不用担心。<br />![git account settings](/assets/img/gitter.png)
+由于 git 服务需要 nas 开通 ssh，因此可以为 git 的管理操作创建单独的账号，与系统管理员账号分开进而保证权限独立、保障系统安全性，git 账户名在网络上公开也不用担心。<br />![git account settings]({{site.cdnroot}}/assets/img/gitter.png)
 #### SSH 账号安全设置
 默认情况下不给加入 administrators 群组，可限制 gitter 账号仅能用于操作 git 仓库。
 ```bash

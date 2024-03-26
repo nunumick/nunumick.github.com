@@ -16,7 +16,7 @@ tags:
 在用了多年的太阳能热水器坏了之后，新的替换升级方案出炉了。
 
 ### 水路设计
-![hot water recirculation system](/assets/img/water-system.jpg)
+![hot water recirculation system]({{site.cdnroot}}/assets/img/water-system.jpg)
 
 #### 说明
 
@@ -34,7 +34,7 @@ tags:
    1. [https://v.youku.com/v_show/id_XNTk2NDQzOTg1Ng==.html](https://v.youku.com/v_show/id_XNTk2NDQzOTg1Ng==.html) 有回水管
    2. [https://v.youku.com/v_show/id_XNTk2NDQ4NDcyNA==.html](https://v.youku.com/v_show/id_XNTk2NDQ4NDcyNA==.html) 无回水管
 
-![recirculation pump](/assets/img/recirculation.jpg)
+![recirculation pump]({{site.cdnroot}}/assets/img/recirculation.jpg)
 
 
 ### 实施改造
