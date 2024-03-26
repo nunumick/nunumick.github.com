@@ -39,7 +39,7 @@ tags:
 
 chrome错误信息：
 
-<img src="http://nunumick.me/lab/x-domain/chrome-error.png" />
+![chrome error](/assets/img/chrome-error.png)
 
 据了解，采用此类try catch方式做安全可行性判断的并不只是个别现象，如<a href="http://svn.dojotoolkit.org/src/dojo/trunk/hash.js" target="_blank">DOJO</a>
 {% highlight javascript %}
