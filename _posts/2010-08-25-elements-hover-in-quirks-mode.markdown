@@ -1,11 +1,12 @@
 ---
 layout: post
 title: doctype与hover伪类
-category: html
+category: front-end
 tags:
     - doctype
     - hover
     - browser
+    - html
 ---
 
 开发过程中将demo中的内容拆分进各子模块，发现之前好好的 hover 效果失效了，我排查的结果是因为在模块中没有定义doctype，页面默认使用 quirks mode，会导致非链接&lt;a&gt;标签的 hover 伪类在 IE7/8 和 firefox 均失去效果。

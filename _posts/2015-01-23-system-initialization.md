@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 前端系统初始化-我的常用工具
-category: system
+category: developer
 tags:
     - jekyll
     - vim

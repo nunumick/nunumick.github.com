@@ -1,10 +1,11 @@
 ---
 layout: post
 title: 慎用通配符选择器
-category: css
+category: front-end
 tags:
     - selector
     - compatibility
+    - css
 ---
 
 ### 一、通配符选择器优先级低

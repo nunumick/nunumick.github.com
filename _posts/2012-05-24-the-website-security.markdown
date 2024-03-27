@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 浅谈前端安全与规范
-category: web
+category: front-end
 tags:
     - security
     - xss

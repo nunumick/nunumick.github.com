@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 也谈IE浏览器P3P隐私策略
-category: web
+category: front-end
 tags:
     - p3p
     - privacy

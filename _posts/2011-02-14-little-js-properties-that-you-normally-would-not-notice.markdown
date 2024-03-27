@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 容易被忽略的JS脚本特性
-category: javascript
+category: front-end
 tags:
     - javascript
     - ecma

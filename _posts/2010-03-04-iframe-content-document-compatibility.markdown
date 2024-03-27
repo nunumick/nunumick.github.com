@@ -1,13 +1,13 @@
 ---
 layout: post
 title: 有趣的兼容性测试-iframe文档对象获取
-categories:
-    - html
-    - javascript
+categories: front-end
 tags:
     - iframe
     - browser
     - compatibility
+    - html
+    - javascript
 ---
 
 前日对iframe的几种文档对象获取方式做了测试，发现一些有趣现象！

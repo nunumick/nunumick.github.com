@@ -1,8 +1,9 @@
 ---
 layout: post
 title: 文档类型对盒子模型的影响
-category: html
+category: front-end
 tags:
+    - html
     - doctype
 ---
 

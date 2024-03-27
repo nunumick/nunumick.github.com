@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Velocity China 2010 Web 性能和运维大会回顾
-categories: 
-    - web
-tags: 
+categories:
+    - front-end
+tags:
     - velocity
     - wpo
 ---

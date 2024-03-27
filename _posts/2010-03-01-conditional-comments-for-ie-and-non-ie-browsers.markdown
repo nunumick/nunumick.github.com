@@ -1,10 +1,11 @@
 ---
 layout: post
 title: 条件注释区分非IE浏览器
-category: html
+category: front-end
 tags:
     - comment
     - compatibility
+    - html
 ---
 
 IE浏览器的条件注释虽不太常用，却异常强大，不仅可以用来区分IE浏览器版本

@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Embed标签src重载
-category: html
+category: front-end
 tags:
     - embed
     - flash
     - browser
     - compatibility
+    - html
 ---
 &lt;embed&gt;标签可用于在页面内嵌入 flash 文件，比较常见的就是在页面内嵌入视频，如：
 {% highlight html %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 网站页面性能优化的34条黄金守则
-category: web
+category: front-end
 tags:
     - wpo
     - yslow

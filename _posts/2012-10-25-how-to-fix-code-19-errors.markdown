@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 解决“Windows无法启动这个硬件设备（代码19）”
-category: system
-tags: 
+category: developer
+tags:
     - windows
     - code19
 ---

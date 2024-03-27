@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 博客转移到Typecho平台
-categories: 
-    - life
-    - php
+categories:
+    - blog
 tags:
     - wordpress
     - typecho
+    - php
     - htaccess
 ---
 
@@ -28,31 +28,31 @@ tags:
 幸好有互联网和搜索引擎，仅仅靠copy和paste一些现成的代码就解决了难题：
 在blog根目录 index.php 的 Typecho_Plugin::factory('index.php')->begin(); 这行前面加上
 {% highlight php %}
-$baseInfo = @explode('?', $_SERVER['REQUEST_URI'], 2); 
-if (is_array($baseInfo)) 
-{ 
-        $_SERVER['REQUEST_URI'] = $_SERVER['REQUEST_URI']; 
-        $_SERVER['PATH_INFO'] = $baseInfo[0]; 
-        unset($_GET); 
-        if ($baseInfo[1]) 
-        { 
-                $getInfo = @explode('&', $baseInfo[1]); 
-                foreach ($getInfo as $v) 
-                { 
-                        $getInfo2 = @explode('=', $v); 
-                        $_GET[$getInfo2[0]] = $getInfo2[1]; 
-                } 
-        } 
+$baseInfo = @explode('?', $_SERVER['REQUEST_URI'], 2);
+if (is_array($baseInfo))
+{
+        $_SERVER['REQUEST_URI'] = $_SERVER['REQUEST_URI'];
+        $_SERVER['PATH_INFO'] = $baseInfo[0];
+        unset($_GET);
+        if ($baseInfo[1])
+        {
+                $getInfo = @explode('&', $baseInfo[1]);
+                foreach ($getInfo as $v)
+                {
+                        $getInfo2 = @explode('=', $v);
+                        $_GET[$getInfo2[0]] = $getInfo2[1];
+                }
+        }
 }
 {% endhighlight %}
 
 如果启用了伪静态，则还需要修改 .htaccess 文件：
 {% highlight php %}
-RewriteEngine On 
-RewriteBase / 
-RewriteRule index(\.)php/(.*) /index.php?/$2 [L] 
-RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteEngine On
+RewriteBase /
+RewriteRule index(\.)php/(.*) /index.php?/$2 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php?/$1 [L]
 {% endhighlight %}
 

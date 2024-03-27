@@ -1,8 +1,9 @@
 ---
 layout: post
 title: htaccess语法教程
-category: web
+category: back-end
 tags:
+    - php
     - htaccess
     - syntax
 ---

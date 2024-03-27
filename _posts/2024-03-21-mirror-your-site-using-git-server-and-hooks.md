@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 通过 Git Server Hooks 实现网站的多仓库同步与镜像部署
-category: web
+category: developer
 tags:
     - nas
     - jekyll

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CodeIgniter 学习笔记
-category: php
+category: back-end
 tags:
     - codeIgniter
     - php

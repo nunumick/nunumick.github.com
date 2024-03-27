@@ -1,9 +1,10 @@
 ---
 layout: post
 title: 如何以get方式传递表单action中的额外参数
-category: html
+category: front-end
 tags:
     - form
+    - html
 ---
 
 ###问题及背景

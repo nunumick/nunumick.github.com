@@ -1,8 +1,9 @@
 ---
 layout: post
-title: '前端优化技巧之img sprites'
-category: css
+title: 前端优化技巧之img sprites
+category: front-end
 tags:
+    - css
     - sprites
 ---
 

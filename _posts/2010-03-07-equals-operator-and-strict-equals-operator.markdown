@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript等同(==)与恒等(===)运算符
-category: javascript
+category: front-end
 tags:
     - javascript
     - operator

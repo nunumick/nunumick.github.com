@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript学习笔记-详解in运算符
-category: javascript
+category: front-end
 tags:
     - javascript
     - operator

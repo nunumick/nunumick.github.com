@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Webkit的跨域安全问题
-category: javascript
+category: front-end
 tags:
     - webkit
     - crossdomain

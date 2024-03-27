@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 度量页面速度的几项指标
-category: web
+category: front-end
 tags:
     - wpo
     - javascript

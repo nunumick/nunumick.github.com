@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用 grunt 管理 jekyll 博客
-category: frontend
+category: blog
 tags:
     - grunt
     - jekyll

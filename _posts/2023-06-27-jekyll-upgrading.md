@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jekyll版本升级到4.x
-category: web
+category: blog
 tags:
     - jekyll
     - blog
