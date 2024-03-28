@@ -1,33 +1,60 @@
 ---
 layout: post
-title: JS 异步编程之理解 CO
+title: JS 异步编程之四：理解异步函数（AsyncFunction）
 category: front-end
 tags:
     - javascript
-    - co
+    - es2017
+    - async
+    - await
 ---
 
 ```javascript
-const gen = function* () {
-  let a = yield new Promise((resolve, reject) => {
+/**
+ * case from mdn
+ */
+
+function resolveAfter2Seconds(x) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function f1() {
+  const x = await resolveAfter2Seconds(10);
+  console.log(x); // 10
+}
+
+f1();
+
+/*
+ * 使用 async & await 处理之前的代码
+ * 替换 generator 和 yield
+ * async 等价于自带 co 执行器的 generator 函数
+ */
+
+const genToAsyncFunction = async function () {
+  let a = await new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(10);
     }, 1000);
   });
 
-  let b = yield new Promise((resolve, reject) => {
+  let b = await new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(20);
     }, 2000);
   });
 
-  let c = yield new Promise((resolve, reject) => {
+  let c = await new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(15);
     }, 1000);
   });
 
-  let d = yield 5;
+  let d = await 5;
 
   let e = a + b + c + d;
 
@@ -35,33 +62,6 @@ const gen = function* () {
 
   return e;
 };
-
-const iter = function (gen, value) {
-  let item = gen.next(value);
-  let v = item.value;
-  console.log(item);
-  if (item.done) return Promise.resolve(v);
-
-  if (v instanceof Promise) {
-    return v.then((res) => {
-      return iter(gen, res);
-    });
-  } else {
-    console.log(v);
-    return iter(gen, v);
-  }
-};
-
-const co = function (gen) {
-  let g = gen();
-  return iter(g);
-};
-
-/*
-co(gen).then((res)=>{
-  console.log(res);
-})
-*/
 
 let [s1, s2, s3, s4] = [2000, 500, 0, 100];
 
@@ -99,17 +99,16 @@ const promiseD = (time) => {
   });
 };
 
-co(function* () {
-  let t1 = yield promiseA(s1);
-  let t2 = yield promiseB(t1 + s2);
-  let t3 = yield promiseC(t2);
-  let t4 = yield promiseD(t1);
-  let result = yield co(gen).then((t5) => {
+async function runPromises() {
+  let t1 = await promiseA(s1);
+  let t2 = await promiseB(t1 + s2);
+  let t3 = await promiseC(t2);
+  let t4 = await promiseD(t1);
+  let result = await genToAsyncFunction().then((t5) => {
     return Promise.resolve(t3 + t4 + t5);
   });
   return result;
-}).then((res) => {
-  console.log("result:", res);
-});
+}
 
+runPromises().then((result) => console.log(result));
 ```

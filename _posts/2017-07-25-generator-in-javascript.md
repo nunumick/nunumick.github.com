@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JS 异步编程之理解生成器（Generator）
+title: JS 异步编程之二：理解生成器（Generator）
 category: front-end
 tags:
     - javascript
