@@ -9,7 +9,7 @@ tags:
     - iterator
 ---
 
-ES2017（ES8）发布了 async functions 和 await 关键字等特性，极大提升了编写异步程序的便利性和代码简洁度，应该说 async & await 是一种新的语法糖，为了说明这一点，我们可以将时间回调到 ES2015（ES6）的特性发布，逐一理解 [iterator](/blog/2017/07/18/iterator-in-javascript.html)、[generator](/blog/2017/07/25/generator-in-javascript.html) 以及 TJ 大神写的中间产物 [co库](/blog/2017/08/05/understanding-co-js.html) 的应用原理，进而了解 async functions 的本质。
+ES2017（ES8）发布了 [async functions](/blog/2017/09/10/async-functions-in-javascript.html) 和 await 关键字等特性，极大提升了编写异步程序的便利性和代码简洁度，应该说 async & await 是一种新的语法糖，为了说明这一点，我们可以将时间回调到 ES2015（ES6）的特性发布，逐一理解 [iterator](/blog/2017/07/18/iterator-in-javascript.html)、[generator](/blog/2017/07/25/generator-in-javascript.html) 以及 TJ 大神写的中间产物 [co库](/blog/2017/08/05/understanding-co-js.html) 的应用原理，进而了解 async functions 的本质。
 
 ### 可迭代对象
 
