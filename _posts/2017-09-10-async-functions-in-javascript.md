@@ -9,6 +9,10 @@ tags:
     - await
 ---
 
+有了[前序内容](/blog/2017/07/18/iterator-in-javascript.html)的了解，再来看 async 函数和 await 关键字，会更容易理解他们的本质。
+
+官方 demo 代码：
+
 ```javascript
 /**
  * case from mdn
@@ -28,13 +32,14 @@ async function f1() {
 }
 
 f1();
+```
 
-/*
- * 使用 async & await 处理之前的代码
- * 替换 generator 和 yield
- * async 等价于自带 co 执行器的 generator 函数
- */
+### 新的武器
 
+使用 async & await 处理之前的代码，替换 generator 和 yield，async 函数等价于自带 co 执行器的 generator 函数。
+
+```javascript
+//语法有变化，但代码逻辑不变
 const genToAsyncFunction = async function () {
   let a = await new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -112,3 +117,5 @@ async function runPromises() {
 
 runPromises().then((result) => console.log(result));
 ```
+
+会发现除了函数声明方式和关键字发生了替换，其他地方都没有改变，程序执行结果也是一样的。于是不难理解 async & await 是语法糖这类说法，本质上应该是在底层应用了 Iterator & Generator 特性及其底层机制。
