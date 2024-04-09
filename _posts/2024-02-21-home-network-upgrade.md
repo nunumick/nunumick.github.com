@@ -16,7 +16,7 @@ tags:
 
 几番折腾后，整体的网络结构如下，应该说是根据家庭情况和实际需求而设计，有更好的合理性和可玩性。
 
-![network](/assets/img/network.png)
+![network]({{site.cdnroot}}/assets/img/network.png)
 
 ### 获取公网 IP
 
@@ -32,13 +32,13 @@ tags:
 
 开通路由器的远程访问功能，华硕路由器互联网访问只允许使用 https 协议，由于默认的 443 端口不能用，需用其他端口代替，比如 5443。在外网使用 https://115.205.12.220:5443 来远程管理路由器。
 
-![router](/assets/img/router-entry.png)
+![router]({{site.cdnroot}}/assets/img/router-entry.png)
 
 ### 动态 DNS（DDNS）
 
 公网 IP 隔一段时间就会变化，总要记住这些 IP 地址比较麻烦，解决办法也很简单。可以启用路由器内置提供的动态 DNS 服务，把动态的 IP 自动与固定的域名进行绑定，也可以使用其他三方 DDNS，我在 NAS 系统和 NO-IP 网站也设置了 DDNS，这样我就有了 3 个免费域名可供选择，常用一个就行，其他用于备用。动态 DNS 原理很简单，本质上就是定期上报登记 IP 的更新，域名解析记录也会更新。
 
-![ddns](/assets/img/ddns.png)
+![ddns]({{site.cdnroot}}/assets/img/ddns.png)
 
 ### 内网穿透
 
@@ -48,13 +48,13 @@ tags:
 
 > 115.205.12.220:8080 -> 192.168.50.50:5080 -> 192.168.51.58:8080 -> docker:80
 
-![port](/assets/img/port.png)
+![port]({{site.cdnroot}}/assets/img/port.png)
 
 ### 静态路由设置
 
 从网络拓扑图中可以看到，二级路由器也启用了 DHCP 服务，子设备网段与主路由不同，分属不同网段的设备要实现相互通信需要在路由器指定静态路由规则。当然也可以不必那么麻烦来设置不同的网段，主要原因是希望实现二级路由能独立运行科学上网程序，实际操作下来发现作为 AP 使用的路由器并不能启用 NAT 功能，于是不得不又设置成路由模式。
 
-![static](/assets/img/static.png)
+![static]({{site.cdnroot}}/assets/img/static.png)
 
 ### 网络代理与规则
 
