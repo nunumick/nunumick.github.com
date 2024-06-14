@@ -38,6 +38,8 @@ f1();
 
 使用 async & await 处理之前的代码，替换 generator 和 yield，async 函数等价于自带 co 执行器的 generator 函数。
 
+<!--more-->
+
 ```javascript
 //语法有变化，但代码逻辑不变
 const genToAsyncFunction = async function () {

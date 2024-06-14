@@ -47,6 +47,7 @@ network={
 # test
 pi@raspberrypi:~ $ ifconfig wlan0
 ```
+<!--more-->
 
 ### 基础运维
 

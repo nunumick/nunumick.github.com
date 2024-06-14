@@ -74,6 +74,7 @@ co(gen).then((res)=>{
 ### 用 co 重写代码
 
 有了这个可重用的便捷的 co 执行器，我们可以用它来重写上一篇[理解生成器（generator）](/blog/2017/07/25/generator-in-javascript.html) 文中的样例代码，替换掉手动逐行执行的那部分。
+<!--more-->
 
 ```javascript
 let [s1, s2, s3, s4] = [2000, 500, 0, 100];

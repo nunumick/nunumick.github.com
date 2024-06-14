@@ -60,6 +60,7 @@ brew install --universal --java subversion
 ### zsh
 
 比较好用的shell，可以简化不少操作，自动补全，颜色高亮，还能识别git仓库
+<!--more-->
 
 **安装zsh**
 {% highlight bash %}

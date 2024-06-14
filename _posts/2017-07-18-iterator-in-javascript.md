@@ -46,6 +46,7 @@ for (let item of arr[Symbol.iterator]()) {
 迭代器是遵循了[迭代协议](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)的对象，协议规定迭代器必须实现 next() 接口，它应该返回当前元素并将迭代器指向下一个元素，返回的对象格式为 {value:元素值, done:是否遍历结束}，其中，done 是一个布尔值。done 属性为 true 的时候，我们默认不会去读取 value, 所以最后返回的经常是 {value: undifined, done: true}
 
 我们可以利用迭代协议规则，手动执行迭代，或者重写对象的迭代逻辑。
+<!--more-->
 
 ```javascript
 //手动调用迭代器的next()方法，每次调用返回一个包含value（当前元素）和done（是否遍历结束）的对象。

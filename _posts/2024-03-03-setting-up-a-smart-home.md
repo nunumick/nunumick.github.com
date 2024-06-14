@@ -32,6 +32,8 @@ HomeBridge 贵在轻量、纯粹、体验好，且 Node.js 项目对前端特别
 
 于是为了深度体验，在我本次“家庭”架构升级中同时引入了这两个项目，应该说 HomeAssistant 的功能很强大，我只用了它很少的一部分能力来搭建理想中的 Apple HomeKit 生态。
 
+<!--more-->
+
 ![smart home]({{site.cdnroot}}/assets/img/home-set.jpg)
 
 ### 安装 HomeAssistant

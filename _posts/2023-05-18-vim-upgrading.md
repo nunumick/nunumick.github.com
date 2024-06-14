@@ -55,6 +55,8 @@ Plug 'madox2/vim-ai', { 'do': './install.sh' }
 call plug#end()
 ```
 
+<!--more-->
+
 ### 配置
 参照各插件的配置文档进行基本问题不会太大，COC 会稍微复杂些，启动以下 features
 ```vimscript

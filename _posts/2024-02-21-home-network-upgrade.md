@@ -17,6 +17,7 @@ tags:
 几番折腾后，整体的网络结构如下，应该说是根据家庭情况和实际需求而设计，有更好的合理性和可玩性。
 
 ![network]({{site.cdnroot}}/assets/img/network.png)
+<!--more-->
 
 ### 获取公网 IP
 

@@ -14,7 +14,10 @@
   {% endif %}
   </p>
   <div class="entry_cont">
-    {{ post.content }}
+    {{ post.excerpt }}
+    {% if post.content.size > post.excerpt.size %}
+    <p><strong><a href="{{ site.url }}{{ post.url }}">(Read more ...)</a></strong></p>
+    {% endif %}
   </div>
   <p class="entry_data">
   {% if post.tags %}

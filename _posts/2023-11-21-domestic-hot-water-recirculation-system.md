@@ -17,6 +17,7 @@ tags:
 
 ### 水路设计
 ![hot water recirculation system]({{site.cdnroot}}/assets/img/water-system.jpg)
+<!--more-->
 
 #### 说明
 
