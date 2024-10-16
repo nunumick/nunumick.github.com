@@ -84,7 +84,7 @@ acme.sh --issue -d nunumick.cn -d life.nunumick.cn -w /home/wwwroot
 ```
 
 #### 证书部署
-默认情况下，ACME.sh 会把申请到的证书放在 <font style="color:rgb(31, 35, 40);">~/.acme.sh/example.com/ </font>目录，我们要把证书部署到 Web 服务器，需要进行以下操作：
+默认情况下，ACME.sh 会把申请到的证书放在 ~/.acme.sh/example.com/ 目录，我们要把证书部署到 Web 服务器，需要进行以下操作：
 
 1. 拷贝证书到 Web 服务器证书存放目录
 2. 设置 Web 服务器证书配置（一次性）
