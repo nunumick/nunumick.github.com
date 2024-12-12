@@ -5,7 +5,7 @@ url: ""
 # 不使用baseurl，会整站 blog/ 作为跟目录
 base_url: /blog
 blogroot: https://nunumick.github.io
-cdnroot: https://cdn.jsdelivr.net/gh/nunumick/nunumick.github.com
+cdnroot: https://gcore.jsdelivr.net/gh/nunumick/nunumick.github.com
 blogname: 默尘
 blogdesc: --  小隐于山，中隐于市，大隐于心 --
 blogauthor: nunumick
