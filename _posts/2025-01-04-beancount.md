@@ -108,7 +108,7 @@ YYYY-MM-DD [txn|Flag] [[Payee] Narration] [Flag] Account Amount [{Cost}] [@ Pric
 ```
 2022-01-01 * "买入黄金10克"
   Assets:Gold           10 GOLD.GRAM {300 CNY}
-  Assets:Bank						-3000 CNY
+  Assets:Bank           -3000 CNY
 
 ;;更新黄金市价，持续持有
 ;;Equity:Unrealized 账户中可以体现出这一潜在收益
@@ -118,8 +118,8 @@ YYYY-MM-DD [txn|Flag] [[Payee] Narration] [Flag] Account Amount [{Cost}] [@ Pric
 ;;以市价 420 卖出 10 克黄金，Beancount 会自动计算市价和成本价的收益
 ;;银行账户实收4200，成本价自动计算3000，1200 元的收益差从 Income 中来
 2023-11-01 * "卖出黄金变现"
-  Assets:Gold						-10 GOLD.GRAM {} @ 420 CNY
-  Assets:Bank						+4200 CNY
+  Assets:Gold           -10 GOLD.GRAM {} @ 420 CNY
+  Assets:Bank           +4200 CNY
   Income:Investing
 ```
 
