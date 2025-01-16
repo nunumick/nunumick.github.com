@@ -48,7 +48,7 @@ RSU 奖励是一种预期获益，准确说未归属的部分是一种赠予协�
 ;;卖股抵税，则可以一笔记录
 2022-01-01 * "中银国际" "2022年RSU股权激励发放-归属"
   Income:Salary:RSU                  -1000 BABA {80.00 USD}
-  Assets:Stock:BoC:RSU:BABA          800 BABA {80.00 USD}
+  Assets:Stock:BoC:RSU:BABA           800 BABA {80.00 USD}
   Expenses:Government:Tax
 ```
 
@@ -58,10 +58,10 @@ RSU 奖励是一种预期获益，准确说未归属的部分是一种赠予协�
 ;;比如卖股抵税时价格涨到了85
 2022-01-01 * "中银国际" "2022年RSU股权激励发放-归属"
   Income:Salary:RSU                -1000 BABA {80 USD}
-  Expenses:Government:Tax          189 BABA {85 USD} ;实际卖出总价是16065
-  Assets:Stock:BoC:RSU:BABA        811 BABA {80 USD} @ 85 USD ;实际存股数，成本80
+  Expenses:Government:Tax           189 BABA {85 USD} ;实际卖出总价是16065
+  Assets:Stock:BoC:RSU:BABA         811 BABA {80 USD} @ 85 USD ;实际存股数，成本80
   Expenses:Government:Tax          -65 USD ;退回超卖的部分价值
-  Assets:Stock:BoC                 65 USD  ;退回超卖的部分价值
+  Assets:Stock:BoC                  65 USD ;退回超卖的部分价值
   Income:Investing                         ;额外得到945投资收益：880 + 65
 ```
 
@@ -79,27 +79,27 @@ RSU 奖励是一种预期获益，准确说未归属的部分是一种赠予协�
 ;;RSU归属，股票买入
 2022-01-01 * "中银国际" "RSU归属"
   Income:Salary:RSU              -1000 BABA {80.00 USD}
-  Assets:Stock:BoC:RSU:BABA      800 BABA {80.00 USD}
+  Assets:Stock:BoC:RSU:BABA       800 BABA {80.00 USD}
   Expenses:Government:Tax
 
 2022-07-01 * "中银国际" "RSU归属"
   Income:Salary:RSU              -200 BABA {72.00 USD}
-  Assets:Stock:BoC:RSU:BABA      160 BABA {72.00 USD}
+  Assets:Stock:BoC:RSU:BABA       160 BABA {72.00 USD}
   Expenses:Government:Tax
 
 ;;股票卖出，声明FIFO模式，可以合并批次简化格式，更符合实际需求
 2023-01-01 * "卖出股票FIFO"
   Assets:Stock:BoC:RSU:BABA     -900 BABA {} @ 87.90 USD ;卖出价87.9，成本价和批次自动计算
-  Assets:Stock:BoC:Cash         79,105.00 USD ;实际进账
-  Expenses:Stock:Fee            5.00 USD ;交易手续费
+  Assets:Stock:BoC:Cash          79,105.00 USD ;实际进账
+  Expenses:Stock:Fee             5.00 USD ;交易手续费
   Income:Investing                       ;利润
 
 ;;如果不使用FIFO声明，则需补全卖出批次与成本价，结果是等价的
 2023-01-01 * "卖出股票"
   Assets:Stock:BoC:RSU:BABA     -800 BABA {80 USD} @ 87.90 USD
   Assets:Stock:BoC:RSU:BABA     -100 BABA {72 USD} @ 87.90 USD
-  Assets:Stock:BoC:Cash         79,105.00 USD ;实际进账
-  Expenses:Stock:Fee            5.00 USD ;交易手续费
+  Assets:Stock:BoC:Cash          79,105.00 USD ;实际进账
+  Expenses:Stock:Fee             5.00 USD ;交易手续费
   Income:Investing
 ```
 
@@ -136,11 +136,11 @@ RSU 奖励是一种预期获益，准确说未归属的部分是一种赠予协�
 活用 Beancount 的通货体系，可以给任意物品定义价格，比如一辆车、一块布等等等等
 
 ```
-2020-01-01 commodity CAR.T
+2020-01-01 commodity CAR.TESLA
   name: "Tesla"
-2024-12-01 open Assets:Vehicle:T CAR.T
+2024-12-01 open Assets:Vehicle:Tesla CAR.TESLA
 2024-12-01 * "购入新车"
-  Assets:Vehicle:T 1 CAR.T {300,000 CNY} @@ 300,000 CNY
+  Assets:Vehicle:Tesla 1 CAR.TESLA {300,000 CNY} @@ 300,000 CNY
   Equity:Opening-Balances
-2025-01-11 price CAR.T 250,000 CNY
+2025-01-11 price CAR.TESLA 250,000 CNY
 ```

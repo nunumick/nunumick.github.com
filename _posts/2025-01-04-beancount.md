@@ -59,8 +59,8 @@ tags:
 
 ```
 2022-01-01 * "书店" "购买了两本书"
-  资金流出账户-银行Account				-10 人民币
-  资金流入账户-商店Account				+10 人民币
+  资金流出账户-银行Account         -10 人民币
+  资金流入账户-商店Account         +10 人民币
 ```
 
 表述了一条基本**完整**的交易信息：在**什么时间**进行了**什么交易**，**收款方**是谁，**资金流出流入账户**分别是什么，**金额**是多少。
@@ -73,9 +73,9 @@ tags:
 
 ```
 2022-01-01 * "书店" "购买了两本书"
-  资金流出账户-银行Account				-10 人民币
-  资金流入账户-商店Account				+9 人民币
-  资金流入账户-支付平台Account			+1 人民币
+  资金流出账户-银行Account         -10 人民币
+  资金流入账户-商店Account          +9 人民币
+  资金流入账户-平台Account          +1 人民币
 ```
 
 真实的一条 Beancount 交易记录：
@@ -107,7 +107,7 @@ YYYY-MM-DD [txn|Flag] [[Payee] Narration] [Flag] Account Amount [{Cost}] [@ Pric
 
 ```
 2022-01-01 * "买入黄金10克"
-  Assets:Gold           10 GOLD.GRAM {300 CNY}
+  Assets:Gold           +10 GOLD.GRAM {300 CNY}
   Assets:Bank           -3000 CNY
 
 ;;更新黄金市价，持续持有
