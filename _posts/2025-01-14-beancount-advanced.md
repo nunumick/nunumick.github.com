@@ -40,7 +40,7 @@ RSU 奖励是一种预期获益，准确说未归属的部分是一种赠予协�
 ;;现金缴税情况：建议分为两个交易记录，一笔缴税，一笔存股
 2022-01-01 * "中银国际" "2022年RSU股权激励发放-存股"
   Income:Salary:RSU                  -1000 BABA {80.00 USD}
-  Assets:Stock:BoC:RSU:BABA          1000 BABA {80.00 USD}
+  Assets:Stock:BoC:RSU:BABA           1000 BABA {80.00 USD}
 2022-01-01 * "2022年RSU股权激励发放-个人所得税"
   Assets:Bank:CMBCHINA               -16000 USD {7.00 CNY}
   Expenses:Government:Tax
