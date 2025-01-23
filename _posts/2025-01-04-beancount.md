@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 硬核记账之路
+title: 使用 Beancount 开启硬核记账之路
 category: life
 tags:
     - beancount

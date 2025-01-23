@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 家庭基础设施篇三：构筑智能家居生活服务
+title: 家庭基础设施篇三：构筑 HomeKit 智能家居生活服务
 category: life
 tags:
     - homekit
