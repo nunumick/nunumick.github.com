@@ -13,4 +13,6 @@ gem "jekyll-seo-tag", "~> 2.8"
 
 gem "jekyll-archives", "~> 2.2"
 
+gem "jekyll-sitemap", "~> 1.4"
+
 #gem "jekyll-webp", "~> 1.0.0"
