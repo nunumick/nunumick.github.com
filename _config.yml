@@ -1,7 +1,7 @@
 # --------------- #
 #  custom config  #
 # --------------- #
-url: ""
+url: https://nunumick.github.io
 # 不使用baseurl，会整站 blog/ 作为跟目录
 base_url: /blog
 blogroot: https://nunumick.github.io
