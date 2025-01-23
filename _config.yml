@@ -57,3 +57,22 @@ collections:
   lists:
     output: true
     permalink: /blog/:path/
+
+# Sitemap exclusion
+# https://jekyllrb.com/docs/configuration/front-matter-defaults/
+defaults:
+  -
+    scope:
+      path: "lab/**/*.*"
+    values:
+      sitemap: false
+  -
+    scope:
+      path: "demo/**/*.*"
+    values:
+      sitemap: false
+  -
+    scope:
+      path: "assets/**/*.pdf"
+    values:
+      sitemap: false
