@@ -436,12 +436,17 @@ ol#comment_list li .respond textarea {
 }
 .widget ul {
   margin: 0;
+  padding-left:13px;
   list-style-type: none;
 }
 .widget ul li {
   margin: 0;
   padding: 0;
   line-height: 24px;
+  list-style: square outside;
+}
+.widget ul li::marker {
+  color:#f92672;
 }
 
 /* ------------------

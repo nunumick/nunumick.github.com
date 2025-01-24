@@ -3,7 +3,7 @@
     <h3>分类</h3>
     <ul>
       {% for category in site.categories %}
-      <li><a href="{{ site.url }}{{ site.base_url }}/categories/{{ category | first | downcase}}/">{{ category | first }}</a>({{ category | last | size }})</li>
+      <li><a href="{{ site.url }}{{ site.base_url }}/categories/{{ category | first | downcase}}/">{{ category | first }}</a> ( {{ category | last | size }} )</li>
       {% endfor %}
     </ul>
   </div>

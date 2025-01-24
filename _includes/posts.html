@@ -2,7 +2,7 @@
 <div class="entry_cont">
   <ol>
     {% for post in site.posts %}
-    <li><a href="{{ site.url }}{{post.url}}">{{post.title}}</a> ({{ post.date | date_to_string }})</li>
+    <li><a href="{{ site.url }}{{post.url}}">{{post.title}}</a> ( {{ post.date | date_to_string }} )</li>
     {% endfor %}
   </ol>
 </div>
