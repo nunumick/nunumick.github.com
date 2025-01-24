@@ -9,10 +9,13 @@
 /* ------------------
  *  * gobal settings
  *   * --------------- */
+html{
+  font-size: 62.5%;
+}
 body {
   background: #fff;
   color: #444;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 1.7;
   /*font-family: Georgia,Times,"Times New Roman",serif;*/
 }
@@ -29,7 +32,7 @@ input, textarea { font-family: Helvetica, Arial, sans-serif; font-size: 100%; }
 }
 
 input, textarea {
-  font-size: 13px;
+  font-size: 1.3rem;
   padding: 2px;
 }
 
@@ -102,7 +105,7 @@ ul { list-style-type: disc; }
 }
 
 #logo h1 {
-  font-size: 35px;
+  font-size: 3.5rem;
   font-weight: normal;
   margin-bottom: 0;
 }
@@ -185,7 +188,7 @@ ul#nav_menu li.subscribe a{
 
 h2.entry_title {
   margin-bottom: 0;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Helvetica,Arial,sans-serif;
 }
@@ -196,7 +199,7 @@ h2.entry_title a {
 
 .entry_data {
   color: #999;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .entry_data a {
@@ -228,10 +231,10 @@ h2.entry_title a {
   color:#000;
 }
 
-.post h3 { font-size: 16px; }
-.post h4 { font-size: 15px; }
-.post h5 { font-size: 14px; }
-.post h6 { font-size: 13px; }
+.post h3 { font-size: 1.6rem; }
+.post h4 { font-size: 1.5rem; }
+.post h5 { font-size: 1.4rem; }
+.post h6 { font-size: 1.3rem; }
 
 .post strong {
   color:#333;
@@ -246,7 +249,7 @@ ol.page-navigator {
   margin: 20px 0 0 0;
   color: #666;
   list-style: none;
-  font-size: 12px;
+  font-size: 1.2rem;
   line-height: 30px;
   font-family: "Lucida Grande",Verdana,"Bitstream Vera Sans",Arial,sans-serif;
 }
@@ -273,7 +276,7 @@ ol.page-navigator li.current a {
  *   * --------------- */
 #PostComments{
   border-bottom:1px solid #eee;
-  font-size:16px;
+  font-size:1.6rem;
   margin-bottom:0;
 }
 #comments {
@@ -281,7 +284,7 @@ ol.page-navigator li.current a {
 }
 
 #comments h4 {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
@@ -324,7 +327,7 @@ ol.comment-list li .comment-reply {
 }
 
 ol.comment-list li .comment-reply a {
-  font-size: 11px;
+  font-size: 1.1rem;
   border: none;
   color: #aaa;
 }
@@ -337,11 +340,11 @@ ol.comment-list li .comment-reply a:hover {
   padding-bottom: 8px;
   /*border-bottom: 1px dashed #eee;*/
   color: #999;
-  font-size: 11px;
+  font-size: 1.1rem;
 }
 .comment-author {
   display: block;
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #444;
 }
 
@@ -374,7 +377,7 @@ ol.comment-list li .respond {
 
 .respond .cancel-comment-reply {
   float: right;
-  font-size: 11px;
+  font-size: 1.1rem;
 }
 
 .respond .cancel-comment-reply a {
@@ -387,7 +390,7 @@ ol.comment-list li .respond {
 }
 
 #comment_form label {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #555;
   display: block;
   font-weight: bold;
@@ -396,7 +399,7 @@ ol.comment-list li .respond {
 #comment_form label .required {
   color: #C04E37;
   padding-left: 5px;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 #comment_form .text {
   width: 100%;
@@ -425,7 +428,7 @@ ol#comment_list li .respond textarea {
   margin: 0 0 20px 0;
 }
 .widget h3 {
-  font-size: 16px;
+  font-size: 1.6rem;
   margin-bottom: 5px;
 }
 .widget ul {
@@ -459,7 +462,7 @@ ol#comment_list li .respond textarea {
   font-family: "iconfont";
   font-style:normal;
   vertical-align:bottom;
-  font-size:20px;
+  font-size:2.0rem;
   color:#f92672;
   line-height:23px;
 }
@@ -474,7 +477,7 @@ ol#comment_list li .respond textarea {
 
 .security i:before {
   content: "\e608";
-  font-size:15px;
+  font-size:1.5rem;
   color:transparent;
   background:url(https://img.alicdn.com/imgextra/i2/O1CN0185atxl21LObnbzfiX_!!6000000006968-2-tps-20-20.png) 0 0 no-repeat;
   background-size:cover;
@@ -551,7 +554,7 @@ img.alignright { margin: 4px 0 0 15px; }
 
   #footer{
     width:auto;
-    font-size:12px;
+    font-size:1.2rem;
   }
   #footer .powered-by, #footer .beian{
     display:block;
