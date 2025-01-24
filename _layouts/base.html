@@ -12,7 +12,9 @@
 {% seo title=false %}
 {% include assets.html %}
 {% include gtm.html %}
+{% if site.location != "cn" %}
 {% include adsense.html %}
+{% endif %}
 </head>
 <body>
 {% include gtm_noscript.html %}

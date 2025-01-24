@@ -28,9 +28,9 @@
     </ul>
   </div>
   {% endif %}
-  {% if site.related_posts and page.type != 'category' and page.type != 'tag' and page.type != 'post list' %}
-  <!-- footerads-simple -->
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3058445836660656" data-ad-slot="8873690727" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  {% if site.location != 'cn' and site.related_posts and page.type != 'category' and page.type != 'tag' and page.type != 'post list' %}
+  <!-- siderads-simple -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{{ site.gads }}" data-ad-slot="8873690727" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
   {% endif %}
 </aside>
