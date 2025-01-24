@@ -89,11 +89,6 @@ legend      { font-weight: bold; }
 
 ul { list-style-type: disc; }
 
-/* -------------------------
- *  * reset width to 840px
- *   * ---------------------- */
-.container_16 { width: 840px; }
-
 /* ------------------
  *  * header
  *   * --------------- */
@@ -175,7 +170,7 @@ ul#nav_menu li a:hover {
 }
 ul#nav_menu li.subscribe {
   float:right;
-  width:215px;
+  width:235px;
 }
 ul#nav_menu li.subscribe a{
   border:none;
@@ -225,7 +220,7 @@ h2.entry_title a {
 }
 
 .post img {
-  max-width: 580px;
+  max-width: 100%;
 }
 
 .post h3,.post h4,.post h5,.post h6 {
@@ -245,7 +240,6 @@ h2.entry_title a {
 .post ol li ol {
   margin-bottom:0;
 }
-
 
 /* = pages nav */
 ol.page-navigator {
@@ -428,7 +422,7 @@ ol#comment_list li .respond textarea {
   overflow: hidden;
 }
 .widget {
-  margin: 0 0 20px 20px;
+  margin: 0 0 20px 0;
 }
 .widget h3 {
   font-size: 16px;
@@ -539,7 +533,7 @@ img.alignright { margin: 4px 0 0 15px; }
   .container_16 {
     width:auto;
   }
-  .container_16 .grid_10 {
+  .container_16 .grid_10, .container_16 .grid_12 {
      width: auto;
      float:none;
      padding:0;
