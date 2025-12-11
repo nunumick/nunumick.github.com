@@ -15,7 +15,7 @@ tags:
 
 <!--more-->
 
-![]({{site.cdnroot}}/assets/img/state-of-ai.png)
+![]({{site.cdnroot}}/assets/img/state-of-ai.webp)
 
 ### 研究基础背景
 
@@ -86,7 +86,7 @@ tags:
 
 我们可以将当前的 LLM 市场理解为一个**大型的专业工具箱**。就像一个工程团队会针对不同的工作选择不同的工具一样：对于需要**最高准确性和可靠性**的核心项目（例如构建系统架构），他们会选择昂贵的**专业级闭源工具**（如 Anthropic Claude）；而对于需要**大量重复操作或创意自由**的任务（例如编写测试脚本或进行角色扮演），他们则会选择**高效率、低成本的开源工具**（如 DeepSeek 或 Qwen）。
 
-![]({{site.cdnroot}}/assets/img/ai-model-toolbox.png)
+![]({{site.cdnroot}}/assets/img/ai-model-toolbox.webp)
 
 
 ### 进一步对观点进行提炼
