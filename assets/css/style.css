@@ -61,6 +61,12 @@ pre, code {
   padding: 8px 10px;
 }
 
+sup {
+  vertical-align: super;
+  font-size: smaller;
+  font-weight: normal;
+}
+
 /* Remove possible quote marks (") from <q>, <blockquote>. */
 blockquote:before, blockquote:after, q:before, q:after { content: ""; }
 blockquote, q { quotes: "" ""; }
