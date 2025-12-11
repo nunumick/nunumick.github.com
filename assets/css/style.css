@@ -483,6 +483,10 @@ ol#comment_list li .respond textarea {
   background-size:cover;
 }
 
+.footnotes li p {
+  margin-bottom:0 !important;
+}
+
 /* -----------------
  *  * misc
  *   *--------------- */
