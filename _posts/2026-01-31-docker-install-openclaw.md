@@ -105,22 +105,22 @@ http://127.0.0.1:18789/
 
 1. **端口冲突**：
    - 如果 `18789` 端口已被占用，可以在 `docker-compose.yml` 中修改端口映射。例如：
-     ```yaml
-     ports:
-       - "9090:18789"
-     ```
+```yaml
+ports:
+- "9090:18789"
+```
 
 2. **健康检查**：
    - 可以通过以下命令检查 Gateway 的健康状态：
-     ```bash
-     docker compose exec openclaw-gateway node dist/index.mjs health --token "$OPENCLAW_GATEWAY_TOKEN"
-     ```
+```bash
+docker compose exec openclaw-gateway node dist/index.mjs health --token "$OPENCLAW_GATEWAY_TOKEN"
+```
 
 3. **日志查看**：
    - 如果遇到问题，可以通过以下命令查看日志：
-     ```bash
-     docker logs openclaw-gateway
-     ```
+```bash
+docker logs openclaw-gateway
+```
 
 ---
 

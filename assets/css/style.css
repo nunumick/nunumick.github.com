@@ -52,13 +52,23 @@ a:hover {
   border-bottom: none;
 }
 
+code {
+  display: inline;
+  background-color: #f9267250;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
 pre, code, tt {
   /*font: 12px 'andale mono', 'lucida console', monospace; line-height: 1.5;*/
 }
-pre, code {
+pre, pre code {
   display: block;
   overflow-x: auto;
   padding: 8px 10px;
+  background-color: transparent;
+  border-radius: none;
 }
 
 sup {
