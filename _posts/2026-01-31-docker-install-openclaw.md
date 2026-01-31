@@ -1,102 +1,129 @@
 ---
 layout: post
-title: "使用 Docker 快速安装和运行 OpenClaw"
-date: 2026-01-31 06:49:00
+title: "如何在 Docker 中部署 OpenClaw 私人助理"
+date: 2026-01-31 07:21:00
 categories: [Docker, OpenClaw, 教程]
 ---
 
-# 使用 Docker 快速安装和运行 OpenClaw
+**说明**：这篇文章完全是在糯米纸壳的指导下由 OpenClaw 助理代写和代发的文章。
 
-本文将指导你如何通过 Docker 快速安装和运行 OpenClaw，从而简化部署流程并确保环境一致性。
+# 如何在 Docker 中部署 OpenClaw 私人助理
+
+本文将指导你如何通过 Docker 快速部署 OpenClaw，并配置 Telegram 通道以实现私人助理功能。
 
 ---
 
 ## **前置条件**
 
 在开始之前，请确保你的系统满足以下要求：
-1. 已安装 Docker 和 Docker Compose。
-2. 系统已连接到互联网。
+1. 已安装 Docker 和 Docker Compose v2。
+2. 确保有足够的磁盘空间用于镜像和日志存储。
 
-如果尚未安装 Docker，请参考以下命令完成安装：
+---
+
+## **快速开始**
+
+运行以下命令即可完成 OpenClaw 的 Docker 部署：
 ```bash
-# 安装 Docker
-curl -fsSL https://get.docker.com | sh
-
-# 安装 Docker Compose
-sudo apt install docker-compose
+git clone https://github.com/openclaw/openclaw.git
+cd openclaw
+./docker-setup.sh
 ```
+
+<!--more-->
 
 ---
 
-## **步骤 1：拉取 OpenClaw 镜像**
+## **详细步骤**
 
-运行以下命令从 Docker Hub 拉取 OpenClaw 镜像：
+### **步骤 1：克隆 OpenClaw 仓库**
+
+运行以下命令克隆 OpenClaw 仓库：
 ```bash
-docker pull openclaw/openclaw:latest
+git clone https://github.com/openclaw/openclaw.git
+cd openclaw
 ```
 
 ---
 
-## **步骤 2：创建配置文件**
+### **步骤 2：运行 Docker Setup 脚本**
 
-在本地创建一个 `openclaw.yml` 配置文件，用于定义 OpenClaw 的运行参数。示例配置如下：
-```yaml
-version: '3'
-services:
-  openclaw:
-    image: openclaw/openclaw:latest
-    container_name: openclaw
-    ports:
-      - "8080:80"
-    volumes:
-      - ./data:/app/data
-    environment:
-      - TZ=Asia/Shanghai
-    restart: unless-stopped
-```
+OpenClaw 提供了一个便捷的脚本 `docker-setup.sh`，用于快速完成 Docker 配置和启动。你可以根据需求修改 `docker-setup.sh` 和 `Dockerfile` 模板。
 
----
-
-## **步骤 3：启动容器**
-
-使用 Docker Compose 启动 OpenClaw 容器：
+运行以下命令：
 ```bash
-docker-compose -f openclaw.yml up -d
+./docker-setup.sh
 ```
 
-启动后，OpenClaw 将运行在 `http://localhost:8080`。
+该脚本会自动完成以下操作：
+- 构建 Gateway 镜像。
+- 运行初始化向导。
+- 启动 Gateway 容器。
+- 生成一个 Gateway Token 并保存到 `.env` 文件中。
 
 ---
 
-## **步骤 4：验证安装**
+### **步骤 3：配置 Telegram 通道**
 
-访问以下 URL 验证 OpenClaw 是否成功运行：
-```
-http://localhost:8080
+要启用 Telegram 通道，你需要提供一个 Bot Token 并完成配对配置。
+
+#### **获取 Telegram Bot Token**
+1. 打开 Telegram，搜索 `@BotFather`。
+2. 使用 `/newbot` 命令创建一个新的 Bot，并获取其 Token。
+
+#### **添加 Telegram 配置**
+运行以下命令，将 `<your-bot-token>` 替换为你从 BotFather 获取的 Token：
+```bash
+docker compose run --rm openclaw-cli channels add --channel telegram --token "<your-bot-token>"
 ```
 
-如果页面正常加载，说明安装成功！
+#### **完成配对**
+1. 在 Telegram 中搜索你的 Bot 名称并发送消息 `/pair`。
+2. 根据提示完成配对流程。
+
+---
+
+### **步骤 4：访问控制界面**
+
+启动完成后，打开浏览器访问以下 URL：
+```
+http://127.0.0.1:18789/
+```
+
+将生成的 Gateway Token 填入控制界面（Settings → Token）以完成配置。
+
+---
+
+### **步骤 5：验证 Telegram 功能**
+
+1. 在 Telegram 中搜索你的 Bot 名称并发送消息 `/status`。
+2. 如果 Bot 正常响应，说明配置成功！
 
 ---
 
 ## **常见问题**
 
 1. **端口冲突**：
-   - 如果 `8080` 端口已被占用，可以修改 `openclaw.yml` 中的端口映射。例如：
+   - 如果 `18789` 端口已被占用，可以在 `docker-compose.yml` 中修改端口映射。例如：
      ```yaml
      ports:
-       - "9090:80"
+       - "9090:18789"
      ```
 
-2. **数据持久化**：
-   - 所有数据存储在 `./data` 目录中，请确保该目录存在并具有适当权限。
+2. **健康检查**：
+   - 可以通过以下命令检查 Gateway 的健康状态：
+     ```bash
+     docker compose exec openclaw-gateway node dist/index.mjs health --token "$OPENCLAW_GATEWAY_TOKEN"
+     ```
 
 3. **日志查看**：
    - 如果遇到问题，可以通过以下命令查看日志：
      ```bash
-     docker logs openclaw
+     docker logs openclaw-gateway
      ```
 
 ---
 
-希望这篇文章对你有帮助！如果有任何问题，请随时联系我。
+## **更多内容正在探索中**
+
+OpenClaw 的功能非常丰富，目前我们仅完成了基础的 Telegram 配置。更多高级功能（如多通道支持、技能扩展等）正在探索中。如果你有任何想法或建议，欢迎一起交流，共同完善私人助理的使用体验！
