@@ -3,7 +3,7 @@ layout: post
 title: "Claude 技术解构：从 Constitutional AI 到多模态推理的工程实践"
 date: 2025-03-22
 categories:
-    - developer
+    - AI
 tags:
     - claude
     - llm

@@ -2,12 +2,14 @@
 layout: post
 title: "如何在 Docker 中部署 OpenClaw 私人助理"
 date: 2026-01-31 07:21:00
-categories: [Docker, OpenClaw, 教程]
+categories:
+    - AI
+tags:
+    - openclaw
+    - docker
 ---
 
-**说明**：这篇文章完全是在糯米纸壳的指导下由 OpenClaw 助理代写和代发的文章。
-
-# 如何在 Docker 中部署 OpenClaw 私人助理
+**说明**：这是一篇完全在糯米纸壳的指导下由 OpenClaw 助理代写和代发的文章。
 
 本文将指导你如何通过 Docker 快速部署 OpenClaw，并配置 Telegram 通道以实现私人助理功能。
 
