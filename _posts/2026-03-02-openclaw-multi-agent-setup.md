@@ -2,14 +2,17 @@
 layout: post
 title: "OpenClaw 多 Agent 配置完整教程"
 date: 2026-03-02 19:40:00 +0800
-categories: OpenClaw 教程
-tags: [OpenClaw, 多 Agent, Telegram, 配置教程]
+categories: AI
+tags: [OpenClaw, multi-agent, Telegram, tutorial]
 description: "详细讲解如何配置 OpenClaw 多 Agent 系统，实现多个 AI 助手协同工作"
 ---
 
 # OpenClaw 多 Agent 配置完整教程
 
 > 📌 **适用场景**：需要多个 AI 助手协同工作、不同场景使用不同 Agent、团队协作等
+
+<!--more-->
+
 
 ---
 
@@ -714,8 +717,7 @@ openclaw gateway status
 
 **参考资料**：
 
-- [OpenClaw 官方文档](https://openclaw.com/docs)
-- [Telegram Bot API](https://core.telegram.org/bots/api)
-- [多 Agent 系统设计模式](https://example.com/multi-agent-patterns)
+- [Telegram Bot API 官方文档](https://core.telegram.org/bots/api)
+- [OpenClaw 官方文档](https://docs.openclaw.ai)
 
 **有问题？** 在评论区留言或加入 OpenClaw 社区讨论！
