@@ -201,17 +201,17 @@ cp ~/.openclaw/workspace/IDENTITY.md ~/.openclaw/workspace-superpd/
     "telegram": {
       "accounts": {
         "default": {
-          "botToken": "8750103987:AAH...",
+          "botToken": "YOUR_BOT_TOKEN_1:ABCdefGHI...",
           "dmPolicy": "pairing",
           "groupPolicy": "open"
         },
         "superpd": {
-          "botToken": "8765391556:AAF...",
+          "botToken": "YOUR_BOT_TOKEN_2:ABCdefGHI...",
           "dmPolicy": "pairing",
           "groupPolicy": "open"
         },
         "superdev": {
-          "botToken": "8690882791:AAH...",
+          "botToken": "YOUR_BOT_TOKEN_3:ABCdefGHI...",
           "dmPolicy": "pairing",
           "groupPolicy": "open"
         }
@@ -252,7 +252,7 @@ openclaw pairing approve telegram <配对码>
 **配置要点**：
 - 3 个 Agent，3 个 Bot Token
 - 启用 agentToAgent 通信
-- 加入群组 `-5125543633`
+- 加入群组 `-YOUR_GROUP_ID`
 
 ### 4.2 NAS Gateway 配置
 
@@ -264,7 +264,7 @@ openclaw pairing approve telegram <配对码>
 
 **配置要点**：
 - 1 个 Agent，1 个 Bot Token
-- 加入群组 `-5125543633`
+- 加入群组 `-YOUR_GROUP_ID`
 - 配置 SSH 访问（用于互维）
 
 ### 4.3 运维要点
